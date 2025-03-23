@@ -1,0 +1,19 @@
+{
+    "brim_type": "outer_and_inner",
+    "brim_width": "5",
+    "from": "User",
+    "inherits": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "layer_height": "0.24",
+    "name": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle) - StorageBox",
+    "post_process": [
+        "/home/buymymojo/bin/ElegooNeptuneThumbnails-Prusa --printer=NEPTUNE4PRO --currency=$"
+    ],
+    "print_settings_id": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle) - StorageBox",
+    "skirt_loops": "3",
+    "small_area_infill_flow_compensation": "1",
+    "sparse_infill_density": "10%",
+    "sparse_infill_pattern": "grid",
+    "version": "2.3.0.0",
+    "wall_sequence": "inner-outer-inner wall"
+}
