@@ -57,6 +57,7 @@ in
     pkgs.wl-clipboard
     pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
     pkgs.age
+    pkgs.stow
     # === CLI ===
 
     # === Image CLI ===
