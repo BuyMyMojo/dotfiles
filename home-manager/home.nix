@@ -197,6 +197,7 @@ in
     };
   };
 
+  programs.bash.enable = true;
   programs.fish.enable = true;
 
   services.ssh-agent.enable = true;
@@ -222,6 +223,10 @@ in
     EDITOR = "code";
     NIXPKGS_ALLOW_UNFREE = "1";
   };
+
+home.sessionPath = [
+    "/home/buymymojo/bin/"
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
