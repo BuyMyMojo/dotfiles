@@ -1,11 +1,5 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in
+{ config, pkgs, unstable, ... }:
+
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -27,7 +21,7 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with unstable; [
     pkgs.nextcloud-client
     pkgs.yubioath-flutter
     pkgs.xpipe
