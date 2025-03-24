@@ -32,6 +32,7 @@ in
     pkgs.yubioath-flutter
     pkgs.xpipe
     pkgs.qbittorrent
+    pkgs.monero-gui
 
 
     # pkgs.protonplus
@@ -74,7 +75,7 @@ in
     (unstable.discord.override { withMoonlight = true; }) # pkgs.discord fails to build because of `'anonymous lambda' called with unexpected argument` so we need to use unstable instead
     pkgs.signal-desktop
     pkgs.telegram-desktop
-    pkgs.thunderbird-latest-unwrapped
+    # pkgs.thunderbird-latest-unwrapped
     # === Communication ===
 
     # === Game perf ===
@@ -83,12 +84,8 @@ in
     # === Game perf ===
 
     # === Dev tooling ===
-    pkgs.rustup
-    pkgs.go
-    pkgs.pnpm
-    pkgs.zig
-    pkgs.maven
-    pkgs.gradle
+    # pkgs.rustup
+
 
     unstable.libreoffice-fresh
     # pkgs.kdePackages.kate
