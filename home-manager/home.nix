@@ -53,6 +53,8 @@
     pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
     pkgs.age
     pkgs.stow
+    pkgs.yt-dlp
+    pkgs.aria2
     # === CLI ===
 
     # === Image CLI ===
@@ -60,13 +62,14 @@
     unstable.image_optim
     pkgs.jpegoptim
     pkgs.libjxl
+    pkgs.libavif
     pkgs.libwebp
     pkgs.imagemagick
     # === Image CLI ===
 
     # === Communication ===
     pkgs.vesktop
-    (unstable.discord.override { withMoonlight = true; }) # pkgs.discord fails to build because of `'anonymous lambda' called with unexpected argument` so we need to use unstable instead
+    (unstable.discord-canary.override { withMoonlight = true; }) # pkgs.discord fails to build because of `'anonymous lambda' called with unexpected argument` so we need to use unstable instead
     pkgs.signal-desktop
     pkgs.telegram-desktop
     # pkgs.thunderbird-latest-unwrapped
@@ -74,7 +77,7 @@
 
     # === Game perf ===
     pkgs.mangojuice
-    pkgs.goverlay
+    unstable.goverlay
     # === Game perf ===
 
     # === Dev tooling ===
