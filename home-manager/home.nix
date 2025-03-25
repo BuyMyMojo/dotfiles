@@ -32,7 +32,7 @@
     # pkgs.protonplus
     pkgs.pcsx2
     pkgs.rpcs3
-    pkgs.ryujinx
+    unstable.ryubing
     pkgs.heroic-unwrapped
     pkgs.ludusavi
 
