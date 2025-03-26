@@ -2,6 +2,7 @@
   config,
   pkgs,
   unstable,
+  gpu-screen-recorder-ui-pkgs,
   inputs,
   ...
 }:
@@ -115,12 +116,7 @@
 
     unstable.gpu-screen-recorder
     unstable.gpu-screen-recorder-gtk
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    gpu-screen-recorder-ui-pkgs.gpu-screen-recorder-ui
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -129,7 +125,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
+  
   programs.moonlight-mod = {
     enable = true;
     # stable = {
@@ -176,9 +172,9 @@
     ];
   };
 
+  # === ssh ===
   programs.ssh.enable = true;
   programs.ssh.addKeysToAgent = "yes";
-
   programs.ssh.matchBlocks = {
     "*" = {
       identityFile = "/home/buymymojo/.ssh/id_ed25519-mainpc";
@@ -198,6 +194,7 @@
     };
   };
 
+  # === shells ===
   programs.bash.enable = true;
   programs.fish.enable = true;
 

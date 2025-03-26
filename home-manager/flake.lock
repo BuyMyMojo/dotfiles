@@ -36,6 +36,22 @@
         "type": "github"
       }
     },
+    "gpu-screen-recorder-ui": {
+      "locked": {
+        "lastModified": 1741023597,
+        "narHash": "sha256-09HLLCoC6L8OEjy0mvA7F6agriHQQOGXYsOisE0b4g8=",
+        "owner": "js6pak",
+        "repo": "nixpkgs",
+        "rev": "5c405e5de49ffe89bcdc5b43813b31383eef6f1c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "js6pak",
+        "ref": "5c405e5de49ffe89bcdc5b43813b31383eef6f1c",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -148,6 +164,7 @@
     },
     "root": {
       "inputs": {
+        "gpu-screen-recorder-ui": "gpu-screen-recorder-ui",
         "home-manager": "home-manager",
         "moonlight": "moonlight",
         "nixpkgs": "nixpkgs_2",
