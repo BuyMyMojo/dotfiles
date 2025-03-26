@@ -66,6 +66,8 @@
     pkgs.stow
     pkgs.yt-dlp
     pkgs.aria2
+    pkgs.jujutsu
+    pkgs.lazyjj
     # === CLI ===
 
     # === Image CLI ===
