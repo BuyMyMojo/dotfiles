@@ -1,6 +1,24 @@
-{ config, pkgs, unstable, ... }:
+{
+  config,
+  pkgs,
+  unstable,
+  inputs,
+  ...
+}:
 
 {
+
+  imports = [
+    inputs.moonlight.homeModules.default
+  ];
+
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      inputs.moonlight.overlays.default
+    ];
+  };
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "buymymojo";
@@ -28,14 +46,12 @@
     pkgs.qbittorrent
     pkgs.monero-gui
 
-
     # pkgs.protonplus
     pkgs.pcsx2
     pkgs.rpcs3
     unstable.ryubing
     pkgs.heroic-unwrapped
     pkgs.ludusavi
-
 
     # === Minecraft ===
     pkgs.prismlauncher
@@ -69,7 +85,7 @@
 
     # === Communication ===
     pkgs.vesktop
-    (unstable.discord-canary.override { withMoonlight = true; }) # pkgs.discord fails to build because of `'anonymous lambda' called with unexpected argument` so we need to use unstable instead
+    pkgs.discord-canary
     pkgs.signal-desktop
     pkgs.telegram-desktop
     # pkgs.thunderbird-latest-unwrapped
@@ -82,7 +98,6 @@
 
     # === Dev tooling ===
     # pkgs.rustup
-
 
     unstable.libreoffice-fresh
     # pkgs.kdePackages.kate
@@ -144,6 +159,24 @@
     # '';
   };
 
+  programs.moonlight-mod = {
+    enable = true;
+    # stable = {
+    #   extensions = {
+    #     allActivites.enabled = true;
+    #     alwaysFocus.enabled = true;
+
+    #     betterEmbedsYT = {
+    #       enabled = true;
+    #       config = {
+    #         fullDescription = false;
+    #         expandDescription = true;
+    #       };
+    #     };
+    #   };
+    # };
+  };
+
   programs.git = {
     enable = true;
     userName = "BuyMyMojo";
@@ -154,7 +187,7 @@
     extraConfig = {
       init = {
 
-      defaultBranch = "main";
+        defaultBranch = "main";
       };
     };
   };
@@ -221,7 +254,7 @@
     NIXPKGS_ALLOW_UNFREE = "1";
   };
 
-home.sessionPath = [
+  home.sessionPath = [
     "/home/buymymojo/bin/"
   ];
 

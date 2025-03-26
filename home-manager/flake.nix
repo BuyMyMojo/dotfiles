@@ -10,6 +10,11 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    moonlight = {
+      url = "github:moonlight-mod/moonlight"; # Add `/develop` to the flake URL to use nightly.
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -18,24 +23,25 @@
       home-manager,
       nixpkgs-unstable,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       homeConfigurations."buymymojo" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit unstable;
+          inherit inputs;
         };
 
         # Specify your home configuration modules here, for example,
