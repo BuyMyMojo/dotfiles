@@ -24,6 +24,13 @@
   home.file."jdks/zulujdk17".source = pkgs.zulu17;
   home.file."jdks/zulujdk23".source = pkgs.zulu23;
 
+  home.file."Godot/current".source = unstable.godot;
+  home.file."Godot/current-mono".source = unstable.godot-mono;
+  home.file."Godot/export-templates/current".source = unstable.godot-export-templates;
+  home.file."Godot/4.3".source = unstable.godot_4_3;
+  home.file."Godot/4.3-mono".source = unstable.godot_4_3-mono;
+  home.file."Godot/export-templates/4.3".source = unstable.godot_4_3-export-templates;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with unstable; [
@@ -37,6 +44,7 @@
     pkgs.pcsx2
     pkgs.rpcs3
     unstable.ryubing
+    unstable.torzu
     pkgs.heroic-unwrapped
     pkgs.ludusavi
 
@@ -96,7 +104,7 @@
     # === Media ===
     pkgs.gimp
     pkgs.krita
-    pkgs.mpv
+    # pkgs.mpv
     unstable.losslesscut-bin
     # === Media ===
 
@@ -108,7 +116,8 @@
     pkgs.distrobox
     pkgs.boxbuddy
 
-    unstable.godot
+    unstable.godot-mono
+    unstable.godot-export-templates
     unstable.blender-hip
     pkgs.freecad-wayland
     pkgs.unityhub
@@ -116,7 +125,6 @@
 
     unstable.gpu-screen-recorder
     unstable.gpu-screen-recorder-gtk
-    gpu-screen-recorder-ui-pkgs.gpu-screen-recorder-ui
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -125,7 +133,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  
+
   programs.moonlight-mod = {
     enable = true;
     # stable = {

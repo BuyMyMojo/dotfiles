@@ -16,10 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    gpu-screen-recorder-ui = {
-      url = "github:js6pak/nixpkgs?ref=5c405e5de49ffe89bcdc5b43813b31383eef6f1c";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+
   };
 
   outputs =
@@ -27,7 +24,6 @@
       nixpkgs,
       home-manager,
       nixpkgs-unstable,
-      gpu-screen-recorder-ui,
       ...
     }@inputs:
     let
@@ -42,16 +38,11 @@
         config.allowUnfree = true;
       };
 
-      gpu-screen-recorder-ui-pkgs = import gpu-screen-recorder-ui {
-        inherit system;
-        config.allowUnfree = true;
-      };
     in
     {
       homeConfigurations."buymymojo" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit gpu-screen-recorder-ui-pkgs;
           inherit unstable;
           inherit inputs;
         };
