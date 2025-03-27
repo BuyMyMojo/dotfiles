@@ -33,7 +33,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with unstable; [
+  home.packages = with unstable; with inputs; [
     pkgs.nextcloud-client
     pkgs.yubioath-flutter
     pkgs.xpipe
@@ -47,6 +47,7 @@
     unstable.torzu
     pkgs.heroic-unwrapped
     pkgs.ludusavi
+    inputs.shadps4-git.packages."x86_64-linux".default
 
     # === Minecraft ===
     pkgs.prismlauncher

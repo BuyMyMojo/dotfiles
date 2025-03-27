@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    shadps4-git.url = "./programs/shadps4";
 
   };
 
