@@ -20,10 +20,12 @@
         name = "shadps4-git";
         pname = "shadps4";
 
-        src = pkgs.fetchgit {
-          url = "https://github.com/shadps4-emu/shadPS4/437af9320104011b32c34c85a6d888a78969b705";
+        src = pkgs.fetchFromGitHub {
+          owner = "shadps4-emu";
+          repo = "shadPS4";
+          rev = "437af9320104011b32c34c85a6d888a78969b705";
+          hash = "sha256-yKaDoqQUGlcfHghqvzs9V8ZjPkO7E1imeTeyiMqGvJw=";
           fetchSubmodules = true;
-          hash = "sha256-jEGa/W3FaPkqFN3oPOw2vEZpRUiSbOGusBH6L6LqbL8=";
           leaveDotGit = true;
         };
 
