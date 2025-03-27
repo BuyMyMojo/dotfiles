@@ -2,20 +2,29 @@
   description = "Current git build of shadps4";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?rev=cfd19cdc54680956dc1816ac577abba6b58b901c";
+    # nixpkgs.url = "github:nixos/nixpkgs?rev=cfd19cdc54680956dc1816ac577abba6b58b901c"; # Same as https://github.com/shadps4-emu/shadPS4/blob/main/shell.nix
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
   outputs =
     { self, nixpkgs }:
+    let
+      pkgs = import nixpkgs {
+        config.allowUnfree = true;
+        system = "x86_64-linux";
+      };
+    in
     {
 
-      packages.x86_64-linux.default = stdenv.mkDerivation {
+      packages.x86_64-linux.default = pkgs.stdenv.mkDerivation {
         name = "shadps4-git";
         pname = "shadps4";
 
         src = pkgs.fetchgit {
-          url = "https://github.com/shadps4-emu/shadPS4";
+          url = "https://github.com/shadps4-emu/shadPS4/437af9320104011b32c34c85a6d888a78969b705";
           fetchSubmodules = true;
+          hash = "sha256-jEGa/W3FaPkqFN3oPOw2vEZpRUiSbOGusBH6L6LqbL8=";
+          leaveDotGit = true;
         };
 
         nativeBuildInputs = [
@@ -23,6 +32,7 @@
           pkgs.cmake
           pkgs.pkg-config
           pkgs.git
+          pkgs.qt6.wrapQtAppsHook
         ];
 
         buildInputs = [
@@ -61,35 +71,60 @@
           pkgs.libpng
         ];
 
-        buildPhase = ''
-          # === setup ===
-          export QT_QPA_PLATFORM="wayland"
-          export QT_PLUGIN_PATH="${pkgs.qt6.qtwayland}/lib/qt-6/plugins:${pkgs.qt6.qtbase}/lib/qt-6/plugins"
-          export QML2_IMPORT_PATH="${pkgs.qt6.qtbase}/lib/qt-6/qml"
-          export CMAKE_PREFIX_PATH="${pkgs.vulkan-headers}:$CMAKE_PREFIX_PATH"
+        # buildPhase = ''
+        #   # === setup ===
+        #   export QT_QPA_PLATFORM="wayland"
+        #   export QT_PLUGIN_PATH="${pkgs.qt6.qtwayland}/lib/qt-6/plugins:${pkgs.qt6.qtbase}/lib/qt-6/plugins"
+        #   export QML2_IMPORT_PATH="${pkgs.qt6.qtbase}/lib/qt-6/qml"
+        #   export CMAKE_PREFIX_PATH="${pkgs.vulkan-headers}:$CMAKE_PREFIX_PATH"
 
-          # OpenGL
-          export LD_LIBRARY_PATH="${
-            pkgs.lib.makeLibraryPath [
-              pkgs.libglvnd
-              pkgs.vulkan-tools
-            ]
-          }:$LD_LIBRARY_PATH"
+        #   # OpenGL
+        #   export LD_LIBRARY_PATH="${
+        #     pkgs.lib.makeLibraryPath [
+        #       pkgs.libglvnd
+        #       pkgs.vulkan-tools
+        #     ]
+        #   }:$LD_LIBRARY_PATH"
 
-          export LDFLAGS="-L${pkgs.llvmPackages_18.libcxx}/lib -lc++"
-          export LC_ALL="C.UTF-8"
-          export XAUTHORITY=${builtins.getEnv "XAUTHORITY"}
-          # === setup ===
+        #   export LDFLAGS="-L${pkgs.llvmPackages_18.libcxx}/lib -lc++"
+        #   export LC_ALL="C.UTF-8"
+        #   export XAUTHORITY=${builtins.getEnv "XAUTHORITY"}
+        #   # === setup ===
 
-          # === build ===
-          cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
-          # cmake --build ./build --parallel $(nproc)
-          # === build ===
-        '';
+        #   # === build ===
+        #   cmake -S . -B build/ -DENABLE_QT_GUI=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+        #   # cmake --build ./build --parallel $(nproc)
+        #   # === build ===
+        # '';
+
+        # installPhase = ''
+        #   cmake --install . --parallel $(nproc)
+        # '';
+
+        cmakeFlags = [
+          (nixpkgs.lib.cmakeBool "ENABLE_QT_GUI" true)
+          (nixpkgs.lib.cmakeBool "ENABLE_UPDATER" false)
+        ];
+
+        # Still in development, help with debugging
+        # cmakeBuildType = "RelWithDebugInfo";
+        # dontStrip = true;
 
         installPhase = ''
-          cmake --install ./build --parallel $(nproc)
+          runHook preInstall
+
+          install -D -t $out/bin shadps4
+          install -Dm644 $src/.github/shadps4.png $out/share/icons/hicolor/512x512/apps/net.shadps4.shadPS4.png
+          install -Dm644 -t $out/share/applications $src/dist/net.shadps4.shadPS4.desktop
+          install -Dm644 -t $out/share/metainfo $src/dist/net.shadps4.shadPS4.metainfo.xml
+
+          runHook postInstall
         '';
+
+        runtimeDependencies = [
+          pkgs.vulkan-loader
+          pkgs.xorg.libXi
+        ];
 
       };
 
