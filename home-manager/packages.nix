@@ -41,6 +41,7 @@
     pkgs.xpipe
     pkgs.qbittorrent
     pkgs.monero-gui
+    unstable.peazip
 
     # pkgs.protonplus
     pkgs.pcsx2
