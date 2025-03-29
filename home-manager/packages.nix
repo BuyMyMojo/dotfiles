@@ -116,6 +116,7 @@
     unstable.krita
     # pkgs.mpv
     unstable.losslesscut-bin
+    unstable.jellyfin-media-player
     # === Media ===
 
     pkgs.polychromatic
