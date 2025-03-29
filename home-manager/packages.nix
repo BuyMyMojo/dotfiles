@@ -31,6 +31,8 @@
   home.file."Godot/4.3-mono".source = unstable.godot_4_3-mono;
   home.file."Godot/export-templates/4.3".source = unstable.godot_4_3-export-templates;
 
+  home.file."bin/wine".source = unstable.wineWowPackages.waylandFull;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with unstable; with inputs; [
@@ -48,6 +50,10 @@
     pkgs.heroic-unwrapped
     pkgs.ludusavi
     inputs.shadps4-git.packages."x86_64-linux".default
+
+    unstable.wineWowPackages.waylandFull
+    unstable.winetricks
+    steamtinkerlaunch
 
     # === Minecraft ===
     pkgs.prismlauncher
