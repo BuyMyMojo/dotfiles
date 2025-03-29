@@ -144,6 +144,12 @@
     # '')
   ];
 
+  programs.mangohud = {
+    enable = true;
+    enableSessionWide = true;
+    package = unstable.mangohud;
+  };
+
   programs.moonlight-mod = {
     enable = true;
     # stable = {
