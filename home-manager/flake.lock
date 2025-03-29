@@ -95,13 +95,29 @@
         "type": "github"
       }
     },
+    "nixpkgs-gsr-ui": {
+      "locked": {
+        "lastModified": 1741023597,
+        "narHash": "sha256-09HLLCoC6L8OEjy0mvA7F6agriHQQOGXYsOisE0b4g8=",
+        "owner": "js6pak",
+        "repo": "nixpkgs",
+        "rev": "5c405e5de49ffe89bcdc5b43813b31383eef6f1c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "js6pak",
+        "ref": "gpu-screen-recorder-ui/init",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1742889210,
-        "narHash": "sha256-hw63HnwnqU3ZQfsMclLhMvOezpM7RSB0dMAtD5/sOiw=",
+        "lastModified": 1743095683,
+        "narHash": "sha256-gWd4urRoLRe8GLVC/3rYRae1h+xfQzt09xOfb0PaHSk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "698214a32beb4f4c8e3942372c694f40848b360d",
+        "rev": "5e5402ecbcb27af32284d4a62553c019a3a49ea6",
         "type": "github"
       },
       "original": {
@@ -167,6 +183,7 @@
         "home-manager": "home-manager",
         "moonlight": "moonlight",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-gsr-ui": "nixpkgs-gsr-ui",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "shadps4-git": "shadps4-git"
       }
@@ -178,11 +195,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-40v+vomEF78ueMyMiz3GbMFJi4WOnzfbkGxiB+vFLSY=",
-        "path": "/nix/store/7w83b1vpap9c0x2gz3g2an6k5n9wkmdk-source/home-manager/programs/shadps4",
+        "path": "/nix/store/8ch06glxnjrrjbaxgm0rnkp5n56ykb7g-source/programs/shadps4",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/7w83b1vpap9c0x2gz3g2an6k5n9wkmdk-source/home-manager/programs/shadps4",
+        "path": "/nix/store/8ch06glxnjrrjbaxgm0rnkp5n56ykb7g-source/programs/shadps4",
         "type": "path"
       }
     },
