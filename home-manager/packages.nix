@@ -44,12 +44,12 @@
     unstable.peazip
 
     # pkgs.protonplus
-    pkgs.pcsx2
+    unstable.pcsx2
     pkgs.rpcs3
     unstable.ryubing
     unstable.torzu
     pkgs.heroic-unwrapped
-    pkgs.ludusavi
+    unstable.ludusavi
     inputs.shadps4-git.packages."x86_64-linux".default
 
     unstable.wineWowPackages.waylandFull
@@ -72,7 +72,7 @@
     pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
     pkgs.age
     pkgs.stow
-    pkgs.yt-dlp
+    unstable.yt-dlp
     pkgs.aria2
     pkgs.jujutsu
     pkgs.lazyjj
@@ -81,7 +81,7 @@
     # === Image CLI ===
     unstable.oxipng
     unstable.image_optim
-    pkgs.jpegoptim
+    unstable.jpegoptim
     pkgs.libjxl
     pkgs.libavif
     pkgs.libwebp
@@ -97,7 +97,7 @@
     # === Communication ===
 
     # === Game perf ===
-    pkgs.mangojuice
+    unstable.mangojuice
     unstable.goverlay
     # === Game perf ===
 
@@ -112,15 +112,15 @@
     # === Dev tooling ===
 
     # === Media ===
-    pkgs.gimp
-    pkgs.krita
+    unstable.gimp
+    unstable.krita
     # pkgs.mpv
     unstable.losslesscut-bin
     # === Media ===
 
     pkgs.polychromatic
 
-    pkgs.orca-slicer
+    unstable.orca-slicer
 
     pkgs.lazydocker
     pkgs.distrobox
@@ -129,7 +129,7 @@
     unstable.godot-mono
     unstable.godot-export-templates
     unstable.blender-hip
-    pkgs.freecad-wayland
+    unstable.freecad-wayland
     pkgs.unityhub
     pkgs.material-maker
 
