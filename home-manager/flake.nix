@@ -18,6 +18,10 @@
 
     shadps4-git.url = "./programs/shadps4";
 
+    nixpkgs-gsr-ui = {
+      url = "github:js6pak/nixpkgs/gpu-screen-recorder-ui/init"; # Add `/develop` to the flake URL to use nightly.
+    };
+
   };
 
   outputs =
@@ -25,6 +29,7 @@
       nixpkgs,
       home-manager,
       nixpkgs-unstable,
+      nixpkgs-gsr-ui,
       ...
     }@inputs:
     let
@@ -39,6 +44,11 @@
         config.allowUnfree = true;
       };
 
+      gsr-ui = import nixpkgs-gsr-ui {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
     in
     {
       homeConfigurations."buymymojo" = home-manager.lib.homeManagerConfiguration {
@@ -46,6 +56,7 @@
         extraSpecialArgs = {
           inherit unstable;
           inherit inputs;
+          inherit gsr-ui;
         };
 
         # Specify your home configuration modules here, for example,

@@ -2,7 +2,7 @@
   config,
   pkgs,
   unstable,
-  gpu-screen-recorder-ui-pkgs,
+  gsr-ui,
   inputs,
   ...
 }:
@@ -132,8 +132,8 @@
     pkgs.unityhub
     pkgs.material-maker
 
-    unstable.gpu-screen-recorder
     unstable.gpu-screen-recorder-gtk
+    gsr-ui.gpu-screen-recorder-ui
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
