@@ -195,11 +195,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-F++9IlKzjo5nlNYC+fpx4GfbJiEUqLarfQPBBT5uz3A=",
-        "path": "/nix/store/xwbzdw1803z7ca584098i7frbafsafhk-source/programs/shadps4",
+        "path": "/nix/store/j88qqgp5b1qwpd8120jh24f48q7c96cw-source/programs/shadps4",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/xwbzdw1803z7ca584098i7frbafsafhk-source/programs/shadps4",
+        "path": "/nix/store/j88qqgp5b1qwpd8120jh24f48q7c96cw-source/programs/shadps4",
         "type": "path"
       }
     },

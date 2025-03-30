@@ -35,7 +35,10 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with unstable; with inputs; [
+  home.packages =
+    with unstable;
+    with inputs;
+    [
     pkgs.nextcloud-client
     pkgs.yubioath-flutter
     pkgs.xpipe
@@ -110,7 +113,7 @@
     pkgs.jetbrains.webstorm
     pkgs.jetbrains.rider
     pkgs.jetbrains.idea-community
-    unstable.neovim
+      # unstable.neovim
     # === Dev tooling ===
 
     # === Media ===
@@ -146,6 +149,17 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  programs.neovim = {
+    # package = unstable.neovim;
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      lazy-nvim
+    ];
+
+  };
 
   programs.mangohud = {
     enable = true;
