@@ -129,11 +129,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1742937945,
-        "narHash": "sha256-lWc+79eZRyvHp/SqMhHTMzZVhpxkRvthsP1Qx6UCq0E=",
+        "lastModified": 1743231893,
+        "narHash": "sha256-tpJsHMUPEhEnzySoQxx7+kA+KUtgWqvlcUBqROYNNt0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d02d88f8de5b882ccdde0465d8fa2db3aa1169f7",
+        "rev": "c570c1f5304493cafe133b8d843c7c1c4a10d3a6",
         "type": "github"
       },
       "original": {
@@ -194,12 +194,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-40v+vomEF78ueMyMiz3GbMFJi4WOnzfbkGxiB+vFLSY=",
-        "path": "/nix/store/anc4qzhsc5y7hmsagfga798ngdvs12a0-source/programs/shadps4",
+        "narHash": "sha256-F++9IlKzjo5nlNYC+fpx4GfbJiEUqLarfQPBBT5uz3A=",
+        "path": "/nix/store/xwbzdw1803z7ca584098i7frbafsafhk-source/programs/shadps4",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/anc4qzhsc5y7hmsagfga798ngdvs12a0-source/programs/shadps4",
+        "path": "/nix/store/xwbzdw1803z7ca584098i7frbafsafhk-source/programs/shadps4",
         "type": "path"
       }
     },
