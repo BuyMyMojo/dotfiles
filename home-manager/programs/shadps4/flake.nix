@@ -23,8 +23,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "shadps4-emu";
           repo = "shadPS4";
-          rev = "437af9320104011b32c34c85a6d888a78969b705";
-          hash = "sha256-yKaDoqQUGlcfHghqvzs9V8ZjPkO7E1imeTeyiMqGvJw=";
+          rev = "a707d31a4c23fdd8aefb146ae04d25ecbca246d0";
+          hash = "sha256-ZOuhdZuLXbR3kzNwoK7jioFy+MjKL8GDBtVRsyGcL98=";
           fetchSubmodules = true;
           leaveDotGit = true;
         };
