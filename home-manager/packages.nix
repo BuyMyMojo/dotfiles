@@ -39,116 +39,117 @@
     with unstable;
     with inputs;
     [
-    pkgs.nextcloud-client
-    pkgs.yubioath-flutter
-    pkgs.xpipe
-    pkgs.qbittorrent
-    pkgs.monero-gui
-    unstable.peazip
-    unstable.kiwix
+      pkgs.nextcloud-client
+      pkgs.yubioath-flutter
+      pkgs.xpipe
+      pkgs.qbittorrent
+      pkgs.monero-gui
+      unstable.peazip
+      unstable.kiwix
 
-    # pkgs.protonplus
-    unstable.pcsx2
-    pkgs.rpcs3
-    unstable.ryubing
-    unstable.torzu
-    pkgs.heroic-unwrapped
-    unstable.ludusavi
-    inputs.shadps4-git.packages."x86_64-linux".default
+      # pkgs.protonplus
+      unstable.pcsx2
+      pkgs.rpcs3
+      unstable.ryubing
+      unstable.torzu
+      pkgs.heroic-unwrapped
+      unstable.ludusavi
+      inputs.shadps4-git.packages."x86_64-linux".default
 
-    unstable.wineWowPackages.waylandFull
-    unstable.winetricks
-    steamtinkerlaunch
+      unstable.wineWowPackages.waylandFull
+      unstable.winetricks
+      steamtinkerlaunch
 
-    # === Minecraft ===
-    pkgs.prismlauncher
-    # pkgs.zulu8
-    # pkgs.zulu17
-    # pkgs.zulu23
-    # === Minecraft ===
+      # === Minecraft ===
+      pkgs.prismlauncher
+      # pkgs.zulu8
+      # pkgs.zulu17
+      # pkgs.zulu23
+      # === Minecraft ===
 
-    # === CLI ===
-    pkgs.bat
-    pkgs.btop
-    pkgs.rrsync
-    pkgs.ripgrep
-    pkgs.wl-clipboard
-    pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
-    pkgs.age
-    pkgs.stow
-    unstable.yt-dlp
-    pkgs.aria2
-    pkgs.jujutsu
-    pkgs.lazyjj
-    # === CLI ===
+      # === CLI ===
+      pkgs.bat
+      pkgs.btop
+      pkgs.rrsync
+      pkgs.ripgrep
+      pkgs.wl-clipboard
+      pkgs.poop # Compare the performance of multiple commands with a colorful terminal user interface
+      pkgs.age
+      pkgs.stow
+      unstable.yt-dlp
+      pkgs.aria2
+      pkgs.jujutsu
+      pkgs.lazyjj
+      pkgs.biome
+      # === CLI ===
 
-    # === Image CLI ===
-    unstable.oxipng
-    unstable.image_optim
-    unstable.jpegoptim
-    pkgs.libjxl
-    pkgs.libavif
-    pkgs.libwebp
-    pkgs.imagemagick
-    # === Image CLI ===
+      # === Image CLI ===
+      unstable.oxipng
+      unstable.image_optim
+      unstable.jpegoptim
+      pkgs.libjxl
+      pkgs.libavif
+      pkgs.libwebp
+      pkgs.imagemagick
+      # === Image CLI ===
 
-    # === Communication ===
-    pkgs.vesktop
-    pkgs.discord-canary
-    pkgs.signal-desktop
-    pkgs.telegram-desktop
-    # pkgs.thunderbird-latest-unwrapped
-    # === Communication ===
+      # === Communication ===
+      pkgs.vesktop
+      pkgs.discord-canary
+      pkgs.signal-desktop
+      pkgs.telegram-desktop
+      # pkgs.thunderbird-latest-unwrapped
+      # === Communication ===
 
-    # === Game perf ===
-    unstable.mangojuice
-    unstable.goverlay
-    # === Game perf ===
+      # === Game perf ===
+      unstable.mangojuice
+      unstable.goverlay
+      # === Game perf ===
 
-    # === Dev tooling ===
-    # pkgs.rustup
+      # === Dev tooling ===
+      # pkgs.rustup
 
-    unstable.libreoffice-fresh
-    # pkgs.kdePackages.kate
-    pkgs.jetbrains.webstorm
-    pkgs.jetbrains.rider
-    pkgs.jetbrains.idea-community
+      unstable.libreoffice-fresh
+      # pkgs.kdePackages.kate
+      pkgs.jetbrains.webstorm
+      pkgs.jetbrains.rider
+      pkgs.jetbrains.idea-community
       # unstable.neovim
-    # === Dev tooling ===
+      # === Dev tooling ===
 
-    # === Media ===
-    unstable.gimp
-    unstable.krita
-    # pkgs.mpv
-    unstable.losslesscut-bin
-    unstable.jellyfin-media-player
-    # === Media ===
+      # === Media ===
+      unstable.gimp
+      unstable.krita
+      # pkgs.mpv
+      unstable.losslesscut-bin
+      unstable.jellyfin-media-player
+      # === Media ===
 
-    pkgs.polychromatic
+      # pkgs.polychromatic
 
-    unstable.orca-slicer
+      unstable.orca-slicer
 
-    pkgs.lazydocker
-    pkgs.distrobox
-    pkgs.boxbuddy
+      pkgs.lazydocker
+      pkgs.distrobox
+      pkgs.boxbuddy
 
-    unstable.godot-mono
-    unstable.godot-export-templates
-    unstable.blender-hip
-    unstable.freecad-wayland
-    pkgs.unityhub
-    pkgs.material-maker
+      unstable.godot-mono
+      unstable.godot-export-templates
+      unstable.blender-hip
+      unstable.freecad-wayland
+      pkgs.unityhub
+      pkgs.material-maker
 
-    unstable.gpu-screen-recorder-gtk
-    gsr-ui.gpu-screen-recorder-ui
+      unstable.gpu-screen-recorder-gtk
+      gsr-ui.gpu-screen-recorder-ui
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
+      # # You can also create simple shell scripts directly inside your
+      # # configuration. For example, this adds a command 'my-hello' to your
+      # # environment:
+      # (pkgs.writeShellScriptBin "my-hello" ''
+      #   echo "Hello, ${config.home.username}!"
+      # '')
+    ];
 
   programs.neovim = {
     # package = unstable.neovim;
