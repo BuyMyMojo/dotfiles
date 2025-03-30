@@ -2,8 +2,11 @@
 
 Just my dot files~
 
-### Install with stow:
+## Install with stow:
+
 ```bash
 stow .
-```
 
+cd local && stow .
+
+```
