@@ -110,6 +110,7 @@
     pkgs.jetbrains.webstorm
     pkgs.jetbrains.rider
     pkgs.jetbrains.idea-community
+    unstable.neovim
     # === Dev tooling ===
 
     # === Media ===
