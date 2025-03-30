@@ -42,6 +42,7 @@
     pkgs.qbittorrent
     pkgs.monero-gui
     unstable.peazip
+    unstable.kiwix
 
     # pkgs.protonplus
     unstable.pcsx2
