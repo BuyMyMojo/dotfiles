@@ -21,6 +21,8 @@
     nixpkgs-gsr-ui = {
       url = "github:js6pak/nixpkgs/gpu-screen-recorder-ui/init"; # Add `/develop` to the flake URL to use nightly.
     };
+    
+    bellado.url = "github:isabelroses/bellado";
 
   };
 
@@ -30,6 +32,7 @@
       home-manager,
       nixpkgs-unstable,
       nixpkgs-gsr-ui,
+      bellado,
       ...
     }@inputs:
     let
@@ -57,7 +60,8 @@
           inherit unstable;
           inherit inputs;
           inherit gsr-ui;
-        };
+          inherit bellado;
+    };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.

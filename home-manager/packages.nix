@@ -11,6 +11,7 @@
 
   imports = [
     inputs.moonlight.homeModules.default
+    inputs.bellado.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -212,6 +213,11 @@
       obs-source-clone
       obs-composite-blur
     ];
+  };
+
+  programs.bellado = {
+    enable = true;
+    enableAliases = true;
   };
 
   # === ssh ===
