@@ -140,6 +140,7 @@
       unstable.freecad-wayland
       pkgs.unityhub
       pkgs.material-maker
+      unstable.blockbench
 
       unstable.gpu-screen-recorder-gtk
       gsr-ui.gpu-screen-recorder-ui
