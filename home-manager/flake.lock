@@ -230,11 +230,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-F++9IlKzjo5nlNYC+fpx4GfbJiEUqLarfQPBBT5uz3A=",
-        "path": "/nix/store/cy0ca66xq8c7hcs68nry9y6qka1wx91b-source/programs/shadps4",
+        "path": "/nix/store/qvgag1b29z1r922j9il1bfrln83h4dyh-source/programs/shadps4",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/cy0ca66xq8c7hcs68nry9y6qka1wx91b-source/programs/shadps4",
+        "path": "/nix/store/qvgag1b29z1r922j9il1bfrln83h4dyh-source/programs/shadps4",
         "type": "path"
       }
     },
