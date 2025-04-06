@@ -1,4 +1,4 @@
 function yt-dlp-archive --wraps='yt-dlp --write-info-json --write-description --write-thumbnail --write-sub --sub-langs all --output "videos/%(uploader).200B (%(channel_id)s)/%(upload_date)s - %(title).200B - %(id)s.%(ext)s" --cookies-from-browser firefox --format bestvideo+bestaudio/best' --description 'alias yt-dlp-archive=yt-dlp --write-info-json --write-description --write-thumbnail --write-sub --sub-langs all --output "videos/%(uploader).200B (%(channel_id)s)/%(upload_date)s - %(title).200B - %(id)s.%(ext)s" --cookies-from-browser firefox --format bestvideo+bestaudio/best'
-  yt-dlp --write-info-json --write-description --write-thumbnail --write-sub --sub-langs all --output "%(uploader).200B (%(channel_id)s)/%(upload_date)s - %(title).200B - %(id)s.%(ext)s" --cookies-from-browser firefox --format bestvideo+bestaudio/best $argv
+  yt-dlp --write-info-json --write-description --write-thumbnail --write-sub --sub-langs all --output "%(uploader).200B (%(channel_id)s)/%(upload_date)s - %(title).200B/%(upload_date)s - %(title).200B - %(id)s.%(ext)s" --cookies-from-browser firefox --format bestvideo+bestaudio/best $argv
         
 end
