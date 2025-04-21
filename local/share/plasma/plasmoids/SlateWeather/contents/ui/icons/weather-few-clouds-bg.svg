@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   enable-background="new"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="weather-few-clouds-bg.svg"
+   inkscape:version="1.4 (1:1.4+202410161351+e7c3feb100)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="13.395833"
+     inkscape:cx="24"
+     inkscape:cy="24"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9" />
+  <circle
+     cx="24"
+     cy="24"
+     r="15"
+     fill="#ebcb8b"
+     id="circle1" />
+  <g
+     fill="#ebcb8b"
+     id="g4">
+    <path
+       d="m24 3 1.5 4h-3z"
+       id="path1" />
+    <path
+       d="m24 45-1.5-4h3z"
+       id="path2" />
+    <path
+       d="m45 24-4 1.5v-3z"
+       id="path3" />
+    <path
+       d="m3 24 4-1.5v3z"
+       id="path4" />
+  </g>
+  <g
+     transform="matrix(.70711 .70711 -.70711 .70711 24 -9.9411)"
+     fill="#ebcb8b"
+     id="g8">
+    <path
+       d="m24 3 1.5 4h-3z"
+       id="path5" />
+    <path
+       d="m24 45-1.5-4h3z"
+       id="path6" />
+    <path
+       d="m45 24-4 1.5v-3z"
+       id="path7" />
+    <path
+       d="m3 24 4-1.5v3z"
+       id="path8" />
+  </g>
+</svg>
