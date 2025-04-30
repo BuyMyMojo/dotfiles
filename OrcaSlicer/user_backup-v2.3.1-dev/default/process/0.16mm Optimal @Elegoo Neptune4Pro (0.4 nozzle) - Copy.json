@@ -1,0 +1,20 @@
+{
+    "brim_type": "brim_ears",
+    "brim_width": "5",
+    "extra_perimeters_on_overhangs": "1",
+    "from": "User",
+    "inherits": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle)",
+    "inner_wall_speed": "250",
+    "is_custom_defined": "0",
+    "name": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "outer_wall_speed": "180",
+    "print_settings_id": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "reduce_crossing_wall": "1",
+    "sparse_infill_density": "20%",
+    "sparse_infill_pattern": "gyroid",
+    "sparse_infill_speed": "250",
+    "support_type": "tree(manual)",
+    "travel_speed": "500",
+    "version": "1.9.0.2",
+    "wall_loops": "2"
+}

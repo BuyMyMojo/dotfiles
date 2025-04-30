@@ -1,1 +1,6 @@
 home-manager/flake.nix
+
+OrcaSlicer/log
+OrcaSlicer/cache
+OrcaSlicer/plugins
+OrcaSlicer/ota

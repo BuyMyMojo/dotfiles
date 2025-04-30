@@ -1,0 +1,14 @@
+{
+    "from": "User",
+    "inherits": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "name": "Main 0.16mm",
+    "post_process": [
+        "ElegooNeptuneThumbnails-Prusa.exe --printer=NEPTUNE4PRO --currency=$"
+    ],
+    "print_settings_id": "Main 0.16mm",
+    "seam_slope_type": "external",
+    "small_area_infill_flow_compensation": "1",
+    "version": "2.1.0.0",
+    "wall_sequence": "inner-outer-inner wall"
+}
