@@ -1,3 +1,15 @@
+## 0.3.0 (2025-05-27)
+
+### Feat
+
+- **halloy**: add 'ly'(nta) to list of channels to join in servers.rizon
+- **halloy**: add 1password command for librechat password
+- **halloy**: add font config to halloy
+
+### Refactor
+
+- **OrcaSlicer**: auto updated orca slicer config
+
 ## 0.2.0 (2025-05-26)
 
 ### Feat
