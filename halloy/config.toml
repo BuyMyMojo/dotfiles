@@ -3,6 +3,10 @@
 # For a complete list of available options,
 # please visit https://halloy.chat/configuration/
 
+[font]
+family = "TX-02"
+size = 20
+
 [servers.liberachat]
 nickname = "aria-coffee"
 server = "irc.libera.chat"
