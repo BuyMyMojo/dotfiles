@@ -9,6 +9,7 @@ size = 20
 
 [servers.liberachat]
 nickname = "aria-coffee"
+nick_password_command = "op read \"op://Personal/3d3jcravcmuyn4edal33growyy/password\""
 server = "irc.libera.chat"
 channels = ["#halloy"]
 
