@@ -1,0 +1,15 @@
+# Halloy config.
+#
+# For a complete list of available options,
+# please visit https://halloy.chat/configuration/
+
+[servers.liberachat]
+nickname = "aria-coffee"
+server = "irc.libera.chat"
+channels = ["#halloy"]
+
+[servers.rizon]
+nickname = "aria-coffee"
+nick_password_command = "op read \"op://Personal/5erb73jgzalyuwjvrckdsgrdmy/password\""
+server = "irc.rizon.net"
+channels = ["#judgment", "Global"]
