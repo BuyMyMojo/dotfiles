@@ -17,4 +17,8 @@ channels = ["#halloy"]
 nickname = "aria-coffee"
 nick_password_command = "op read \"op://Personal/5erb73jgzalyuwjvrckdsgrdmy/password\""
 server = "irc.rizon.net"
-channels = ["#judgment", "Global"]
+channels = [
+    "#judgment",
+    "Global",
+    "ly" # nta (did:plc:uc7e6sv2dk26iqxwuh4jw2yt)
+    ]
