@@ -1,3 +1,15 @@
+## 0.4.0 (2025-05-30)
+
+### Feat
+
+- **fish**: add new fish command
+- **mpv**: move to using lossless avif screenshots
+- **fish**: add btrfs compression and gpg key upload fish functions
+
+### Refactor
+
+- **OrcaSlicer**: slight change in fillament colour
+
 ## 0.3.0 (2025-05-27)
 
 ### Feat
