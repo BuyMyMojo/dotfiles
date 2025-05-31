@@ -1,0 +1,122 @@
+---
+runtime:
+  threads: ~
+release:
+  check: true
+manifest:
+  enable: true
+language: en-US
+theme: dark
+roots:
+  - store: steam
+    path: /home/buymymojo/.local/share/Steam
+  - store: steam
+    path: /run/media/buymymojo/KingstonSSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/sde1/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/SamsungSSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/ExternalLinuxHDD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/4TB-SSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/2TB-WDHDD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/sdf2/SteamLibrary
+  - store: otherWine
+    path: /home/buymymojo/Games/Heroic/Prefixes/default/Clair Obscur Expedition 33
+  - store: otherWine
+    path: /home/buymymojo/Games/Heroic/Prefixes/default/Voices of the Void/pfx
+  - store: otherWine
+    path: /home/buymymojo/Games/Heroic/Prefixes/default/Final Fantasy IX/pfx
+  - store: heroic
+    path: /home/buymymojo/.config/heroic
+redirects: []
+backup:
+  path: /run/media/buymymojo/sdf2/Nextcloud/GameSaves2025
+  ignoredGames: []
+  filter:
+    excludeStoreScreenshots: false
+    cloud:
+      exclude: false
+      epic: false
+      gog: false
+      origin: false
+      steam: false
+      uplay: false
+    ignoredPaths: []
+    ignoredRegistry: []
+  toggledPaths:
+    Factorio Server 2025:
+      /run/media/buymymojo/4TB-SSD/Docker/Factorio/2025-April/data/.lock: false
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  retention:
+    full: 8
+    differential: 0
+  format:
+    chosen: zip
+    zip:
+      compression: zstd
+    compression:
+      deflate:
+        level: 6
+      bzip2:
+        level: 6
+      zstd:
+        level: 12
+  onlyConstructive: false
+restore:
+  path: /run/media/buymymojo/sdf2/Nextcloud/GameSaves2025
+  ignoredGames: []
+  toggledPaths: {}
+  toggledRegistry: {}
+  sort:
+    key: status
+    reversed: false
+  reverseRedirects: false
+scan:
+  showDeselectedGames: true
+  showUnchangedGames: true
+  showUnscannedGames: true
+cloud:
+  remote: ~
+  path: ludusavi-backup
+  synchronize: true
+apps:
+  rclone:
+    path: ""
+    arguments: "--fast-list --ignore-checksum"
+customGames:
+  - name: Factorio Server 2025
+    integration: override
+    files:
+      - /run/media/buymymojo/4TB-SSD/Docker/Factorio/2025-April
+    registry: []
+    installDir: []
+  - name: Minecraft-Prisim
+    integration: override
+    files:
+      - "<home>/.local/share/PrismLauncher/instances/*/minecraft/saves/"
+      - "<home>/.local/share/PrismLauncher/instances/*/minecraft/screenshots/"
+    registry: []
+    installDir: []
+  - name: Synergia
+    integration: override
+    files:
+      - "<winAppData>/RenPy/Synergia-1529537386/*.save"
+      - "<winAppData>/RenPy/Synergia-1529537386/persistent"
+      - "<home>/.renpy/Synergia-1529537386/*.save"
+    registry: []
+    installDir: []
+  - name: Cyberpunk 2077
+    integration: override
+    files:
+      - "<home>/Saved Games/CD Projekt Red/Cyberpunk 2077"
+      - "<winLocalAppData>/CD Projekt Red/Cyberpunk 2077"
+      - "<winDocuments>/../Pictures/Cyberpunk 2077"
+    registry: []
+    installDir: []

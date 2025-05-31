@@ -1,0 +1,157 @@
+---
+version:
+  - 0
+  - 29
+  - 1
+release:
+  checked: "2025-05-31T07:14:20.060702972Z"
+  latest: 0.29.1
+migrations:
+  adopted_cache: true
+  fixed_spanish_config: true
+  set_default_manifest_url_to_null: true
+manifests:
+  "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
+    etag: "W/\"f8f6c3d31ceee6054eb71c0f1fae3ed9d51f286bb9e58184e010c22ff91597e9\""
+    checked: "2025-05-31T07:14:23.791753639Z"
+    updated: "2025-05-31T07:14:23.791753639Z"
+roots:
+  - store: heroic
+    path: /home/buymymojo/.config/heroic
+  - store: steam
+    path: /home/buymymojo/.local/share/Steam
+  - store: steam
+    path: /run/media/buymymojo/2TB-WDHDD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/4TB-SSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/ExternalLinuxHDD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/KingstonSSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/SamsungSSD/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/sde1/SteamLibrary
+  - store: steam
+    path: /run/media/buymymojo/sdf2/SteamLibrary
+backup:
+  recent_games:
+    - 1000xResist
+    - Abiotic Factor
+    - Arma Reforger
+    - "Armored Core VI: Fires of Rubicon"
+    - Back 4 Blood
+    - Balatro
+    - "Baldur's Gate 3"
+    - Black Mesa
+    - Bloons TD 6
+    - Buckshot Roulette
+    - Celeste
+    - "Clair Obscur: Expedition 33"
+    - Cult of the Lamb
+    - Cyberpunk 2077
+    - Deadlock
+    - "Divinity: Original Sin II - Definitive Edition"
+    - Doom Eternal
+    - Elden Ring
+    - Elite Dangerous
+    - Factorio
+    - Factorio Server 2025
+    - Final Fantasy
+    - Final Fantasy X/X-2 HD Remaster
+    - Final Fantasy XIII
+    - FragPunk
+    - GTFO
+    - "Garry's Mod"
+    - Grounded
+    - Guilty Gear Strive
+    - Helldivers 2
+    - Learn Japanese To Survive! Hiragana Battle
+    - Lethal Company
+    - Lies of P
+    - Luanti
+    - "Metal Gear Solid 3: Snake Eater - Master Collection Version"
+    - "Metaphor: ReFantazio"
+    - Minecraft-Prisim
+    - Mouthwashing
+    - "NieR: Automata"
+    - Palworld
+    - Persona 3 Reload
+    - Phasmophobia
+    - Project Warlock
+    - Project Zomboid
+    - Quake II
+    - Raft
+    - Resident Evil 4 (2023)
+    - Risk of Rain 2
+    - Selaco
+    - Signalis
+    - Starfield
+    - Synergia
+    - Tabletop Simulator
+    - TaleSpire
+    - "The Elder Scrolls II: Daggerfall"
+    - "The Elder Scrolls IV: Oblivion Remastered"
+    - The Last of Us Part I
+    - "The Witcher 3: Wild Hunt"
+    - Ultrakill
+    - Unleashed Recompiled
+    - Valheim
+    - Viewfinder
+    - "Warhammer 40,000: Darktide"
+    - Yakuza Kiwami
+restore:
+  recent_games:
+    - Abiotic Factor
+    - Arma Reforger
+    - "Armored Core VI: Fires of Rubicon"
+    - Back 4 Blood
+    - Balatro
+    - "Baldur's Gate 3"
+    - Bloons TD 6
+    - Buckshot Roulette
+    - Celeste
+    - Cult of the Lamb
+    - Cyberpunk 2077
+    - Deadlock
+    - "Divinity: Original Sin II - Definitive Edition"
+    - Elden Ring
+    - Elite Dangerous
+    - Factorio
+    - Factorio Server 2025
+    - Final Fantasy X/X-2 HD Remaster
+    - Final Fantasy XIII
+    - FragPunk
+    - Grounded
+    - Guilty Gear Strive
+    - Helldivers 2
+    - Learn Japanese To Survive! Hiragana Battle
+    - Lethal Company
+    - Marvel Rivals
+    - "Metal Gear Solid 3: Snake Eater - Master Collection Version"
+    - "Metaphor: ReFantazio"
+    - Mouthwashing
+    - "NieR: Automata"
+    - "Operation: Tango"
+    - Palworld
+    - Persona 3 Reload
+    - Portal
+    - Project Wingman
+    - Project Zomboid
+    - Quake II
+    - Raft
+    - Risk of Rain 2
+    - Selaco
+    - Starfield
+    - Tabletop Simulator
+    - TaleSpire
+    - Teardown
+    - "The Elder Scrolls II: Daggerfall"
+    - "The Elder Scrolls IV: Oblivion Remastered"
+    - The Last of Us Part I
+    - "The Witcher 3: Wild Hunt"
+    - Ultrakill
+    - Unleashed Recompiled
+    - Viewfinder
+    - "Warhammer 40,000: Darktide"
+    - Yakuza Kiwami

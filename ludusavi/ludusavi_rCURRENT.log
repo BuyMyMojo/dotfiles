@@ -1,0 +1,1 @@
+[2025-04-09T08:22:15.521Z] ERROR [ludusavi::scan::layout] [Factorio Server 2025] unable to open source: StrictPath { raw: "/run/media/buymymojo/4TB-SSD/Docker/Factorio/2025-April/data/.lock", basis: None } | Permission denied (os error 13)
