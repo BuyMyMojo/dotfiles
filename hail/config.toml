@@ -1,0 +1,92 @@
+win_rect = [0, 0, 300, 500]
+[keybinds]
+is_global = true
+split = "space"
+pause = "enter"
+skip = "minus"
+undo = "u"
+reset = "r"
+prev_comparison = "left"
+next_comparison = "right"
+load_run = "f1"
+reload_config = "f2"
+load_state = "f3"
+dump_state = "f4"
+toggle_global = "f5"
+
+[[plugin]]
+name = "debug_events"
+
+[[plugin]]
+name = "game_info"
+config ="""
+bg_color = [0, 0, 0, 0]
+text_color = [255, 255, 255, 255]
+[font]
+name = 'SansSerif'
+style = 'Normal'
+weight = 'Normal'
+size = 18
+"""
+
+[[plugin]]
+name = "segments"
+config = """
+base_color = [255, 255, 255, 255]
+behind_color = [255, 0, 0, 255]
+gaining_color = [255, 90, 90, 255]
+losing_color = [135, 255, 125, 255]
+ahead_color = [0, 255, 0, 255]
+gold_color = [255, 255, 0, 255]
+bg_color = [0, 0, 0, 0]
+line_color = [255, 255, 255, 255]
+current_color = [0, 0, 255, 100]
+two_rows = true
+draw_lines = true
+show_future = false
+[font]
+name = 'SansSerif'
+style = 'Normal'
+weight = 'Normal'
+size = 18
+"""
+
+
+[[plugin]]
+name = "timer"
+config = """
+base_color = [255, 255, 255, 255]
+behind_color = [255, 0, 0, 255]
+gaining_color = [255, 90, 90, 255]
+losing_color = [135, 255, 125, 255]
+ahead_color = [0, 255, 0, 255]
+bg_color = [0, 0, 0, 0]
+precision = "Millis"
+timing = "Real"
+decimal_scale = 0.85
+[font]
+name = 'SansSerif'
+style = 'Normal'
+weight = 'Normal'
+size = 50
+"""
+
+[[plugin]]
+name = "sum_of_best"
+config = """
+font = {name = "SansSerif", style = "Normal", weight = "Normal", size = 18}
+text_color = [255, 255, 255, 255]
+bg_color = [0, 0, 0, 0]
+"""
+
+[[plugin]]
+name = "diff"
+config = """
+comparison = 'Current'
+font = {name = "SansSerif", style = "Normal", weight = "Normal", size = 18}
+text_color = [255, 255, 255, 255]
+bg_color = [0, 0, 0, 0]
+"""
+
+[[plugin]]
+name = "websocket"
