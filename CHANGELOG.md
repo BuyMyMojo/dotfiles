@@ -1,3 +1,10 @@
+## 0.5.0 (2025-05-31)
+
+### Feat
+
+- **ludusavi**: add ludusavi config
+- add speedrunner timer configs
+
 ## 0.4.0 (2025-05-30)
 
 ### Feat
