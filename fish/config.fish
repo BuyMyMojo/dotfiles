@@ -6,5 +6,9 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 #    # smth smth
 #end
 
-fish_add_path /home/buymymojo/bin
-fish_add_path /home/buymymojo/.cargo/bin
+# pnpm
+set -gx PNPM_HOME "/home/buymymojo/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
