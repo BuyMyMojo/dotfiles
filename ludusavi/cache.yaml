@@ -4,7 +4,7 @@ version:
   - 29
   - 1
 release:
-  checked: "2025-05-31T07:14:20.060702972Z"
+  checked: "2025-06-02T13:10:29.314986025Z"
   latest: 0.29.1
 migrations:
   adopted_cache: true
@@ -12,9 +12,9 @@ migrations:
   set_default_manifest_url_to_null: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"f8f6c3d31ceee6054eb71c0f1fae3ed9d51f286bb9e58184e010c22ff91597e9\""
-    checked: "2025-05-31T07:14:23.791753639Z"
-    updated: "2025-05-31T07:14:23.791753639Z"
+    etag: "W/\"95ac4a37156723d1e35db706ae9f6b39956925e0534340afedea45f01ab3dab9\""
+    checked: "2025-06-02T13:10:30.341280286Z"
+    updated: "2025-06-02T13:10:30.341280286Z"
 roots:
   - store: heroic
     path: /home/buymymojo/.config/heroic
@@ -100,6 +100,7 @@ backup:
     - Viewfinder
     - "Warhammer 40,000: Darktide"
     - Yakuza Kiwami
+    - Zelda64Recompiled
 restore:
   recent_games:
     - Abiotic Factor

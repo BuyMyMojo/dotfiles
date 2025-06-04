@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: qdmxj-w99sv
+created: 2025-03-23T15:29:11+11:00

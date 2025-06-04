@@ -120,3 +120,20 @@ customGames:
       - "<winDocuments>/../Pictures/Cyberpunk 2077"
     registry: []
     installDir: []
+  - name: Final Fantasy
+    integration: override
+    files:
+      - "<winDocuments>/My Games/FINAL FANTASY PR/Steam/<storeUserId>"
+      - "<winDocuments>/My Games/FINAL FANTASY VI PR/Steam/<storeUserId>"
+    registry:
+      - "HKEY_CURRENT_USER/Software/SQUARE ENIX, Inc./FINAL FANTASY"
+    installDir:
+      - FINAL FANTASY PR
+      - ""
+  - name: Zelda64Recompiled
+    integration: override
+    files:
+      - "<home>/Games/Zelda64Recompiled/"
+      - "<home>/.config/Zelda64Recompiled/"
+    registry: []
+    installDir: []
