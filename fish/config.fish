@@ -18,3 +18,6 @@ set -gx VISUAL ms-edit
 
 fish_add_path /home/buymymojo/bin
 fish_add_path /home/buymymojo/.cargo/bin
+
+fish_add_path $(go env GOBIN)
+fish_add_path $(go env GOPATH)/bin
