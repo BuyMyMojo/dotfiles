@@ -1,0 +1,41 @@
+[user]
+	name = aria
+	email = hello@aria.coffee
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBi5QCHIPTT6Uvq2SLxWUKxcN7RgdtrgJxVs2muVUbqe
+[signing]
+	key = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBi5QCHIPTT6Uvq2SLxWUKxcN7RgdtrgJxVs2muVUbqe
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/opt/1Password/op-ssh-sign"
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+[diff]
+	renames = copies
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+[pull]
+	default = current
+	rebase = true
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn	
