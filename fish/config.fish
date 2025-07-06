@@ -13,11 +13,13 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-set -gx EDITOR ms-edit
-set -gx VISUAL ms-edit
+set -gx EDITOR msedit
+set -gx VISUAL msedit
 
 fish_add_path /home/buymymojo/bin
 fish_add_path /home/buymymojo/.cargo/bin
 
 fish_add_path $(go env GOBIN)
 fish_add_path $(go env GOPATH)/bin
+
+starship init fish | source

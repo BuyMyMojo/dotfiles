@@ -4,7 +4,7 @@ version:
   - 29
   - 1
 release:
-  checked: "2025-06-07T11:43:40.767044438Z"
+  checked: "2025-07-06T03:21:34.000485253Z"
   latest: 0.29.1
 migrations:
   adopted_cache: true
@@ -12,9 +12,9 @@ migrations:
   set_default_manifest_url_to_null: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"2ec3b77269a0c40bd8d8a54fa765f73a7f3bfbfffc27648141683c6303a701c4\""
-    checked: "2025-06-07T11:43:42.786690121Z"
-    updated: "2025-06-07T11:43:42.786690121Z"
+    etag: "W/\"4f36043dc5eceba9ca99081d92e32906ea833dc0aef9574cbd2324a0bf58ca8a\""
+    checked: "2025-07-06T03:21:34.830492486Z"
+    updated: "2025-07-06T03:21:34.830492486Z"
 roots:
   - store: heroic
     path: /home/buymymojo/.config/heroic
@@ -50,9 +50,12 @@ backup:
     - Celeste
     - "Clair Obscur: Expedition 33"
     - Cult of the Lamb
+    - "Cyber Knights: Flashpoint"
     - Cyberpunk 2077
     - Deadlock
+    - Deltarune
     - "Divinity: Original Sin II - Definitive Edition"
+    - Dolphin
     - Doom Eternal
     - Elden Ring
     - Elite Dangerous
@@ -61,10 +64,8 @@ backup:
     - Final Fantasy
     - Final Fantasy X/X-2 HD Remaster
     - Final Fantasy XIII
-    - FragPunk
     - GTFO
     - "Garry's Mod"
-    - Grounded
     - Guilty Gear Strive
     - Helldivers 2
     - Learn Japanese To Survive! Hiragana Battle
@@ -79,6 +80,7 @@ backup:
     - Palworld
     - Persona 3 Reload
     - Phasmophobia
+    - Prism
     - Project Warlock
     - Project Zomboid
     - Quake II
@@ -88,6 +90,7 @@ backup:
     - Selaco
     - Signalis
     - Starfield
+    - Sunset Overdrive
     - Synergia
     - Tabletop Simulator
     - TaleSpire

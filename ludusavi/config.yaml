@@ -137,3 +137,30 @@ customGames:
       - "<home>/.config/Zelda64Recompiled/"
     registry: []
     installDir: []
+  - name: "Cyber Knights: Flashpoint"
+    integration: override
+    files:
+      - "<home>/.config/unity3d/TreseBrothersGames/CyberKnights/<storeUserId>"
+      - "<home>/AppData/LocalLow/TreseBrothersGames/CyberKnights/<storeUserId>"
+      - "<home>/Library/Application Support/TreseBrothersGames/CyberKnights/<storeUserId>"
+    registry: []
+    installDir:
+      - Cyber Knights Flashpoint
+  - name: Deltarune
+    integration: override
+    files:
+      - "<home>/Games/Heroic/Prefixes/default/DELTRARUNE/pfx/drive_c/users/steamuser/AppData/Local/DELTARUNE/"
+    registry: []
+    installDir: []
+  - name: Prism
+    integration: override
+    files:
+      - "<home>/.local/share/PrismLauncher/instances/*/mmc-pack.json"
+      - "<home>/.local/share/PrismLauncher/skins/"
+      - "<home>/.local/share/PrismLauncher/icons/"
+      - "<home>/.local/share/PrismLauncher/assets/skins/"
+      - "<home>/.local/share/PrismLauncher/instances/*/instance.cfg"
+      - "<home>/.local/share/PrismLauncher/instances/*/*.png"
+      - "<home>/.local/share/PrismLauncher/instances/*/.minecraft/"
+    registry: []
+    installDir: []
