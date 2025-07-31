@@ -11676,6 +11676,19 @@ A World With No Colour:
   steam:
     id: 459730
 A World of Keflings:
+  files:
+    "<winLocalAppData>/Packages/Microsoft.AWorldOfKeflings_8wekyb3d8bbwe/LocalState/<storeUserId>":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: microsoft
+    "<winLocalAppData>/Packages/Microsoft.AWorldOfKeflings_8wekyb3d8bbwe/LocalState/<storeUserId>/prefs.set":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: microsoft
   steam:
     id: 3238580
 A Writer and His Daughter:
@@ -13606,20 +13619,6 @@ ANVIL:
             store: steam
   steam:
     id: 1487390
-ANYKEY:
-  installDir:
-    ANYKEY: {}
-  launch:
-    "<base>/ANYKEY.app/Contents/MacOS/ANYKEY":
-      - when:
-          - os: mac
-            store: steam
-    "<base>/ANYKEY.exe":
-      - when:
-          - os: windows
-            store: steam
-  steam:
-    id: 790450
 "ANti: Virus Destroyer":
   installDir:
     ANti: {}
@@ -26639,6 +26638,25 @@ Akin Vol 2:
             store: steam
   steam:
     id: 654820
+Akka Arrh:
+  cloud:
+    steam: true
+  files:
+    "<winDocuments>/Llamasoft_GameSavedata/AKKA_SAVEDATA.dat":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
+  installDir:
+    Akka Arrh: {}
+  launch:
+    "<base>/Project-A.exe":
+      - when:
+          - bit: 64
+            store: steam
+  steam:
+    id: 2005680
 Akte Europa:
   files:
     "<base>/game.00x":
@@ -37182,6 +37200,18 @@ Angry Birds Space:
         - config
       when:
         - os: windows
+    "<winLocalAppData>/Packages/1ED5AEA5.AngryBirdsSpace_p2gbknwb5d8r2/LocalState":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: microsoft
+    "<winLocalAppData>/Packages/1ED5AEA5.AngryBirdsSpace_p2gbknwb5d8r2/LocalState/settings.lua":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: microsoft
   installDir:
     Angry Birds Space: {}
   launch:
@@ -37203,6 +37233,18 @@ Angry Birds Star Wars:
         - config
       when:
         - os: windows
+    "<winLocalAppData>/Packages/1ED5AEA5.AngryBirdsBlack_p2gbknwb5d8r2/LocalState":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: microsoft
+    "<winLocalAppData>/Packages/1ED5AEA5.AngryBirdsBlack_p2gbknwb5d8r2/LocalState/settings.lua":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: microsoft
 Angry Birds Star Wars II:
   files:
     "<winAppData>/Rovio/Angry Birds Star Wars II/*.*":
@@ -40294,13 +40336,6 @@ Anthelion:
             store: steam
   steam:
     id: 494000
-Anthem:
-  files:
-    "<winDocuments>/BioWare/Anthem/settings":
-      tags:
-        - config
-      when:
-        - os: windows
 Anthology of Fear:
   files:
     "<base>/Anthology of Fear_Data/StreamingAssets/*.aof":
@@ -40914,6 +40949,20 @@ Anxiety:
             store: steam
   steam:
     id: 667340
+Anykey:
+  installDir:
+    ANYKEY: {}
+  launch:
+    "<base>/ANYKEY.app/Contents/MacOS/ANYKEY":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/ANYKEY.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 790450
 Anykey Simulator:
   steam:
     id: 513530
@@ -41390,6 +41439,10 @@ Apex Legends:
           - bit: 64
             os: windows
             store: steam
+  registry:
+    HKEY_CURRENT_USER/SOFTWARE/Valve/Source/r2:
+      tags:
+        - config
   steam:
     id: 1172470
 Apex Tournament:
@@ -49834,7 +49887,7 @@ Asphyxia:
       when:
         - os: windows
           store: uplay
-    "<winDocuments>/Assassin's Creed Shadows":
+    "<winDocuments>/Assassin's Creed Shadows/ACShadows.ini":
       tags:
         - config
       when:
@@ -52322,13 +52375,16 @@ Asylum:
     gog: true
     steam: true
   files:
-    "<home>/Library/Application Support/Epic/Asylum/Saved/SaveGames/Senscape*.sav":
+    "<winLocalAppData>/Asylum/Saved/Config/WindowsNoEditor":
+      tags:
+        - config
       when:
-        - os: mac
-          store: steam
-    "<winLocalAppData>/Asylum/Saved/SaveGames/Senscape*.sav":
+        - os: windows
+    "<winLocalAppData>/Asylum/Saved/SaveGames":
+      tags:
+        - save
       when:
-        - store: steam
+        - os: windows
   gog:
     id: 1418166671
   id:
@@ -54685,6 +54741,8 @@ Augustus:
         - save
       when:
         - os: windows
+  id:
+    lutris: augustus-im-auftrag-des-kaisers
 Aura Kingdom:
   files:
     "<base>/client.ini":
@@ -60554,17 +60612,32 @@ Backyard Baseball:
   steam:
     id: 3170540
 Backyard Baseball 2001:
+  cloud:
+    steam: true
   files:
     "<base>/Coaches":
       tags:
         - save
       when:
         - os: windows
-    "C:/Windows/hegames.ini":
+    "<home>/AppData/LocalLow/Mega Cat Studios/Backyard Baseball 2001/<storeUserId>":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: steam
+    "<winDir>/hegames.ini":
       tags:
         - config
       when:
         - os: windows
+  installDir:
+    Backyard Baseball 2001: {}
+  launch:
+    "<base>/baseball 2001.exe":
+      - when:
+          - os: windows
+            store: steam
   steam:
     id: 3104970
 Backyard Brawl:
@@ -64170,6 +64243,8 @@ Barbie in the 12 Dancing Princesses:
     "<home>/AppData/LocalLow/Outright Games LTD/Barbie Project Friendship/SaveData.*":
       when:
         - store: steam
+  id:
+    lutris: barbie-project-friendship
   installDir:
     Barbie Project Friendship: {}
   launch:
@@ -71220,6 +71295,8 @@ Beat Saber:
       - 3354700
       - 3354710
       - 3535520
+      - 3739820
+      - 3804490
   installDir:
     Beat Saber: {}
   steam:
@@ -73269,6 +73346,28 @@ Below the Stone:
             store: steam
   steam:
     id: 1170230
+"Beltion: Beyond Ritual":
+  files:
+    "<base>/bin/*.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winDocuments>/My Games/Beltion/saves":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    Beltion Beyond Ritual: {}
+  launch:
+    "<base>/bin/BELTION.EXE":
+      - when:
+          - os: windows
+            store: steam
+        workingDir: "<base>/bin"
+  steam:
+    id: 3863590
 Beltmatic:
   cloud:
     steam: true
@@ -82145,6 +82244,8 @@ Blades of Fire:
         - save
       when:
         - os: windows
+  id:
+    lutris: blades-of-fire
 Blades of Gory:
   installDir:
     Blades of Gory: {}
@@ -95209,6 +95310,11 @@ Brawlderdash:
     id: 342660
 Brawlhalla:
   files:
+    "<home>/BrawlhallaReplays":
+      tags:
+        - save
+      when:
+        - os: windows
     "<winAppData>/BrawlhallaAir":
       tags:
         - save
@@ -96620,6 +96726,12 @@ Brickadia:
         - config
       when:
         - os: windows
+  installDir:
+    Brickadia: {}
+  launch:
+    "<base>/Brickadia/Binaries/Win64/BrickadiaSteam-Win64-Shipping.exe":
+      - when:
+          - store: steam
   steam:
     id: 2199420
 Brickfest:
@@ -113431,6 +113543,8 @@ Castlevania Dominus Collection:
         - config
       when:
         - os: windows
+  id:
+    lutris: castlevania-lords-of-shadow-ultimate-edition
   installDir:
     CastlevaniaLoS: {}
   launch:
@@ -113451,6 +113565,8 @@ Castlevania Dominus Collection:
         - save
       when:
         - os: windows
+  id:
+    lutris: castlevania-lords-of-shadow-mirror-of-fate-hd
   installDir:
     Castlevania Lords of Shadow - Mirror of Fate HD: {}
   launch:
@@ -113479,6 +113595,7 @@ Castlevania Dominus Collection:
       when:
         - os: windows
   id:
+    lutris: castlevania-lords-of-shadow-2
     steamExtra:
       - 273150
       - 273151
@@ -114843,7 +114960,7 @@ Catlateral Damage:
         - save
       when:
         - os: linux
-    "<winAppData>/LocalLow/Manekoware/Catlateral Damage_ Remeowstered":
+    "<home>/AppData/LocalLow/Manekoware/Catlateral Damage_ Remeowstered":
       tags:
         - config
         - save
@@ -122130,6 +122247,13 @@ Cho Dengeki Stryker:
         workingDir: "<base>/Cho Dengeki Stryker"
   steam:
     id: 321190
+Cho Ren Sha 68K:
+  files:
+    "<base>/etc_data/config.ini":
+      tags:
+        - config
+      when:
+        - os: windows
 Choco Pixel:
   cloud:
     steam: true
@@ -124608,6 +124732,26 @@ Chrono:
             store: steam
   steam:
     id: 987820
+Chrono (2024):
+  cloud:
+    steam: true
+  files:
+    "<base>/Chrono/Saved/Config/Linux":
+      tags:
+        - config
+      when:
+        - os: linux
+    "<base>/Chrono/Saved/Config/Windows":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<base>/Chrono/Saved/SaveGames":
+      tags:
+        - save
+      when:
+        - os: windows
+        - os: linux
 Chrono Ark:
   files:
     "<home>/.config/unity3d/AlFine/ChronoArk/AlFine/ChronoArk/**/*.sav":
@@ -125072,6 +125216,9 @@ Chucky:
             store: steam
   steam:
     id: 999250
+"Chud Logic's: Gockbound":
+  steam:
+    id: 3802620
 Chunks:
   installDir:
     Chunks: {}
@@ -139416,6 +139563,16 @@ Connected Hearts - Visual novel:
             store: steam
   steam:
     id: 603140
+"Connection: The Nightmare Within":
+  installDir:
+    Connection The Nightmare Within: {}
+  launch:
+    "<base>/Connection.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2463620
 "Connectionism:Pain Control":
   installDir:
     ConnectomePain Control: {}
@@ -144292,6 +144449,11 @@ Counter-Strike 2:
   cloud:
     steam: true
   files:
+    "<base>/game/csgo/cfg":
+      tags:
+        - config
+      when:
+        - os: linux
     "<root>/userdata/<storeUserId>/730/local/cfg":
       tags:
         - config
@@ -149802,6 +149964,8 @@ Croc 2:
     gogExtra:
       - 1152820153
       - 2036105119
+  steam:
+    id: 3043940
 CrocApoca!! Crocodile Maiden at the End of the World:
   steam:
     id: 1294620
@@ -150955,6 +151119,11 @@ CrownFall:
             store: steam
   steam:
     id: 683730
+Crowned In Steel:
+  id:
+    lutris: crowned-in-steel
+  steam:
+    id: 2679830
 "Crowns and Pawns: Kingdom of Deceit":
   cloud:
     gog: true
@@ -153960,6 +154129,11 @@ Cube Escape Collection:
     gog: true
     steam: true
   files:
+    "<home>/Documents/Rusty Lake/CubeEscapeCollection/saveGame.sav":
+      tags:
+        - save
+      when:
+        - os: mac
     "<winDocuments>/Rusty Lake/CubeEscapeCollection/saveGame.sav":
       tags:
         - save
@@ -153984,6 +154158,11 @@ Cube Escape Collection:
   cloud:
     steam: true
   files:
+    "<home>/Documents/Rusty Lake/Paradox/saveGame.sav":
+      tags:
+        - save
+      when:
+        - os: mac
     "<winDocuments>/Rusty Lake/Paradox/saveGame.sav":
       tags:
         - save
@@ -157530,7 +157709,7 @@ Cybercube:
     id: 1413550
 Cyberdillo:
   id:
-    lutris: "https://lutris.net/games/cyberdillo/"
+    lutris: cyberdillo
 "Cyberdimension Neptunia: 4 Goddesses Online":
   cloud:
     steam: true
@@ -161851,6 +162030,8 @@ Dark:
         - config
       when:
         - os: windows
+  id:
+    lutris: dark
   installDir:
     Dark: {}
   launch:
@@ -170238,6 +170419,23 @@ Dead in time:
             store: steam
   steam:
     id: 875530
+Dead of Darkness:
+  cloud:
+    steam: true
+  files:
+    "<winLocalAppData>/Dead_of_Darkness":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    Dead of Darkness: {}
+  launch:
+    "<base>/Dead of Darkness.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2157210
 Dead of Night:
   installDir:
     Dead of Night: {}
@@ -179129,6 +179327,13 @@ DemonCrawl:
             store: steam
   steam:
     id: 1141220
+Demonbane:
+  files:
+    "C:/Users/[User]/AppData/Roaming/Nitroplus":
+      tags:
+        - save
+      when:
+        - os: windows
 Demonheart:
   cloud:
     steam: true
@@ -181318,6 +181523,29 @@ Despair:
             store: steam
   steam:
     id: 1629350
+Despelote:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/solimporta/despelote/<storeUserId>/Despelote/despel.ote":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
+  installDir:
+    Despelote: {}
+  launch:
+    "<base>/despelote.exe":
+      - when:
+          - os: windows
+            store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/solimporta/despelote:
+      tags:
+        - config
+  steam:
+    id: 2367820
 "Desperados 2: Cooper's Revenge":
   files:
     "<base>/data/configuration/game":
@@ -181477,6 +181705,14 @@ Desperate Times:
             store: steam
   steam:
     id: 513920
+"Despicable Me: Minion Rush":
+  files:
+    "<winLocalAppData>/Packages/GAMELOFTSA.DespicableMeMinionRush_0pp20fcewvvtj/LocalState":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
 Despoiler:
   installDir:
     DESPOILER: {}
@@ -183595,6 +183831,25 @@ Devil May Cry 4 Special Edition:
   gog:
     id: 1874889748
   id:
+    gogExtra:
+      - 1162939711
+      - 1216371363
+      - 1219400400
+      - 1329737470
+      - 1373993343
+      - 1384442806
+      - 1386468425
+      - 1441152455
+      - 1465873218
+      - 1493691274
+      - 1643718373
+      - 1796085279
+      - 1891388970
+      - 1909755672
+      - 1931171108
+      - 1938258264
+      - 1981120558
+      - 2114434360
     steamExtra:
       - 359490
       - 359491
@@ -189420,6 +189675,47 @@ Distant Kingdoms:
             store: steam
   steam:
     id: 1090760
+Distant Memoraĵo:
+  files:
+    "<base>/game/saves":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<home>/.renpy/Distant Memorajxo":
+      tags:
+        - save
+      when:
+        - os: linux
+    "<home>/Library/RenPy/Distant Memorajxo":
+      tags:
+        - save
+      when:
+        - os: mac
+    "<winAppData>/RenPy/Distant Memorajxo":
+      tags:
+        - save
+      when:
+        - os: windows
+  id:
+    lutris: distant-memorajo
+  installDir:
+    Distant Memorajo: {}
+  launch:
+    "<base>/DistantMemorajxo.app":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/DistantMemorajxo.exe":
+      - when:
+          - os: windows
+            store: steam
+    "<base>/DistantMemorajxo.sh":
+      - when:
+          - os: linux
+            store: steam
+  steam:
+    id: 1591490
 Distant Nightmare:
   installDir:
     Distant Nightmare: {}
@@ -201317,6 +201613,8 @@ Dream Pets VR:
 Dream Pinball 3D:
   gog:
     id: 1207658899
+  id:
+    lutris: dream-pinball-3d
   installDir:
     dream_pinball_3D: {}
   launch:
@@ -215153,6 +215451,8 @@ Echo:
         - os: windows
   gog:
     id: 2145436309
+  id:
+    lutris: echo
   installDir:
     ECHO: {}
   launch:
@@ -226670,6 +226970,19 @@ Eric the Unready:
   cloud:
     epic: true
     steam: true
+  files:
+    "<winLocalAppData>/Eriksholm/Saved/SaveGames/<storeUserId>/*.sav":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    Eriksholm: {}
+  launch:
+    "<base>/Eriksholm.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
   steam:
     id: 2377280
 Erinye:
@@ -231986,6 +232299,34 @@ Evertried:
             store: steam
   steam:
     id: 1607040
+Every Day We Fight:
+  cloud:
+    epic: true
+    gog: true
+    steam: true
+  files:
+    "<winLocalAppData>/Fuji/Saved/SaveGames/*.sav":
+      tags:
+        - save
+      when:
+        - os: windows
+  gog:
+    id: 1234008475
+  id:
+    steamExtra:
+      - 2566710
+  installDir:
+    Project Fuji: {}
+  launch:
+    "<base>/Fuji.exe":
+      - arguments: "-dx12"
+        when:
+          - store: steam
+      - arguments: "-dx11"
+        when:
+          - store: steam
+  steam:
+    id: 1546080
 "Every Day's Different":
   installDir:
     "Every Day's Different": {}
@@ -245829,9 +246170,11 @@ Fate Tectonics:
             store: steam
   steam:
     id: 379530
-Fate Trigger The Novita:
+Fate Trigger:
   steam:
     id: 3092530
+Fate Trigger The Novita:
+  alias: Fate Trigger
 Fate of Kai:
   installDir:
     Fate of Kai: {}
@@ -251820,6 +252163,11 @@ Fire Department 2:
     lutris: firefighter-command-raging-inferno
 Fire Department 3:
   files:
+    "<base>/Data/Config":
+      tags:
+        - config
+      when:
+        - os: windows
     "<base>/Save":
       tags:
         - save
@@ -260542,6 +260890,9 @@ Forest Ranger Simulator:
             store: steam
   steam:
     id: 1185780
+Forest Reigns:
+  steam:
+    id: 3325070
 Forest Survival:
   steam:
     id: 934880
@@ -262541,13 +262892,31 @@ Forts:
   files:
     "<base>/users/<storeUserId>/campaigns":
       tags:
+        - save
+      when:
+        - os: windows
+    "<base>/users/<storeUserId>/keys.lua":
+      tags:
         - config
+      when:
+        - os: windows
+    "<base>/users/<storeUserId>/settings.lua":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<base>/users/<storeUserId>/trainingMapProgress.lua":
+      tags:
+        - save
       when:
         - os: windows
   id:
     steamExtra:
       - 627370
       - 1033530
+      - 1335840
+      - 1811550
+      - 2278070
   installDir:
     Forts: {}
   launch:
@@ -265650,7 +266019,17 @@ Freedom Planet:
         - save
       when:
         - os: linux
+    "<base>/game/save*.dat":
+      tags:
+        - save
+      when:
+        - os: linux
     "<base>/records.dat":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<base>/save*.dat":
       tags:
         - save
       when:
@@ -265666,6 +266045,11 @@ Freedom Planet:
       when:
         - store: steam
     "<root>/userdata/<storeUserId>/248310/remote/records.dat":
+      tags:
+        - save
+      when:
+        - store: steam
+    "<root>/userdata/<storeUserId>/248310/remote/save*.dat":
       tags:
         - save
       when:
@@ -269587,7 +269971,7 @@ Furi:
         - save
       when:
         - os: windows
-    "<home>/AppData/LocalLow/TheGameBakers/Furi/Settings.xml":
+    "<home>/AppData/LocalLow/TheGameBakers/Furi/Settings.json":
       tags:
         - config
       when:
@@ -280477,6 +280861,9 @@ Ghost Guns:
     id: 1148690
 Ghost Guns - Horror Shooter:
   alias: Ghost Guns
+Ghost Haunting:
+  steam:
+    id: 3594530
 Ghost In The Barn House:
   installDir:
     Ghost In The Barn House: {}
@@ -288661,6 +289048,16 @@ Goo Saga - HD Edition:
   steam:
     id: 506830
 GooCubelets:
+  files:
+    "<home>/AppData/LocalLow/Zonitron Productions/GooCubelets":
+      tags:
+        - save
+      when:
+        - os: windows
+  registry:
+    HKEY_CURRENT_USER/SOFTWARE/Zonitron Productions/GooCubelets:
+      tags:
+        - config
   steam:
     id: 397620
 GooCubelets 2:
@@ -290798,11 +291195,6 @@ Grand Theft Auto V Enhanced:
     id: 3240220
 "Grand Theft Auto: Episodes from Liberty City":
   files:
-    "<winDocuments>/Rockstar Games/GTA IV/Profiles/<storeUserId>":
-      tags:
-        - save
-      when:
-        - os: windows
     "<winLocalAppData>/Rockstar Games/GTA IV/Settings/SETTINGS_EFLC.CFG":
       tags:
         - config
@@ -295299,6 +295691,33 @@ Grizzland:
 Grizzly Adventure:
   steam:
     id: 925630
+Grizzly Man:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/LCB/GrizzlyMan/NaninovelData/Saves/*.nson":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/LCB/GrizzlyMan/NaninovelData/Saves/Settings.json":
+      tags:
+        - config
+      when:
+        - os: windows
+  installDir:
+    Grizzly Man: {}
+  launch:
+    "<base>/GrizzlyMan.exe":
+      - when:
+          - os: windows
+            store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/LCB/GrizzlyMan:
+      tags:
+        - config
+  steam:
+    id: 3118010
 Grizzly Valley:
   installDir:
     Grizzly Valley: {}
@@ -309102,6 +309521,11 @@ Hearts of Iron IV:
             store: steam
   steam:
     id: 394360
+Heartworm:
+  cloud:
+    steam: true
+  steam:
+    id: 1257030
 Heat:
   installDir:
     Heat: {}
@@ -325378,6 +325802,9 @@ Horizon Vanguard:
     HORIZON VANGUARD: {}
   steam:
     id: 598740
+Horizon Walker:
+  steam:
+    id: 3279780
 Horizon Zero Dawn:
   cloud:
     gog: true
@@ -334345,6 +334772,25 @@ I ♥ You!:
             store: steam
   steam:
     id: 448960
+"I, Robot":
+  cloud:
+    steam: true
+  files:
+    "<winDocuments>/Llamasoft_GameSavedata/IRobot_SaveData.dat":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
+  installDir:
+    I_Robot: {}
+  launch:
+    "<base>/Project-I.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2932910
 "I, The Inquisitor":
   alias: The Inquisitor (2024)
 "I, Zombie":
@@ -337289,6 +337735,12 @@ Ikaruga:
         - save
       when:
         - os: windows
+    "<root>/userdata/<storeUserId>/253750":
+      tags:
+        - config
+        - save
+      when:
+        - store: steam
   installDir:
     Ikaruga: {}
   launch:
@@ -368453,6 +368905,13 @@ Kisaragi no Hougyoku:
             store: steam
   steam:
     id: 502990
+Kishin Hishou Demonbane:
+  files:
+    "C:/Users/[User]/AppData/Roaming/Nitroplus":
+      tags:
+        - save
+      when:
+        - os: windows
 Kismet:
   installDir:
     Kismet: {}
@@ -382217,6 +382676,7 @@ Lego Alpha Team:
 "Lego Batman: The Videogame":
   cloud:
     gog: true
+    steam: true
   files:
     "<home>/Library/Preferences/Feral Interactive/Lego Batman":
       tags:
@@ -391546,9 +392006,25 @@ Llama Villa:
     steam: true
   files:
     "<winAppData>/The Jeff Minter Story/*.save":
+      tags:
+        - save
       when:
         - os: windows
-          store: steam
+    "<winAppData>/The Jeff Minter Story/recently_played.json":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<winAppData>/The Jeff Minter Story/settings.json":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winAppData>/The Jeff Minter Story/timeline_progress.json":
+      tags:
+        - save
+      when:
+        - os: windows
   installDir:
     Llamasoft: {}
   launch:
@@ -412747,6 +413223,11 @@ Marvel Rivals:
         - config
       when:
         - os: windows
+    "<winLocalAppData>/Marvel/Saved/Saved/Config/{id}/MarvelUserSetting.ini":
+      tags:
+        - config
+      when:
+        - os: windows
     "<winLocalAppData>/MarvelRivals_Launcher/meta_info":
       tags:
         - config
@@ -416047,6 +416528,45 @@ Maze Madness:
           - store: steam
   steam:
     id: 848100
+Maze Mice:
+  cloud:
+    steam: true
+  files:
+    "<winAppData>/Godot/app_userdata/Maze Mice":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
+  installDir:
+    Maze Mice: {}
+  launch:
+    "<base>/Maze Mice.app/Contents/MacOS/Maze Mice":
+      - when:
+          - os: mac
+            store: steam
+      - arguments: "--rendering-driver opengl3"
+        when:
+          - os: mac
+            store: steam
+    "<base>/Maze Mice.exe":
+      - when:
+          - os: windows
+            store: steam
+      - arguments: "--rendering-driver opengl3"
+        when:
+          - os: windows
+            store: steam
+    "<base>/Maze Mice.x86_64":
+      - when:
+          - os: linux
+            store: steam
+      - arguments: "--rendering-driver opengl3"
+        when:
+          - os: linux
+            store: steam
+  steam:
+    id: 3385370
 Maze Ninja:
   installDir:
     Maze Ninja: {}
@@ -421848,6 +422368,16 @@ Metal Carnage:
             store: steam
   steam:
     id: 512200
+Metal Combat:
+  installDir:
+    Metal Combat: {}
+  launch:
+    "<base>/MetalCombat.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 3863610
 Metal Commando:
   installDir:
     Metal Commando: {}
@@ -423420,28 +423950,24 @@ Metro 2033 Redux:
         - save
       when:
         - os: mac
-    "<winDocuments>/4A Games/Metro 2033":
-      tags:
-        - save
-      when:
-        - os: windows
-          store: gog
-    "<winDocuments>/4A Games/Metro 2033/<storeUserId>":
-      tags:
-        - save
-      when:
-        - os: windows
     "<winDocuments>/4A Games/Metro Redux":
       tags:
         - save
       when:
         - os: windows
-    "<winLocalAppData>/4A Games/Metro 2033/<storeUserId>/user.cfg":
+        - os: windows
+          store: gog
+    "<winDocuments>/4A Games/Metro Redux/<storeUserId>":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<winLocalAppData>/4A Games/Metro Redux/<storeUserId>/user.cfg":
       tags:
         - config
       when:
         - os: windows
-    "<winLocalAppData>/4A Games/Metro 2033/user.cfg":
+    "<winLocalAppData>/4A Games/Metro Redux/user.cfg":
       tags:
         - config
       when:
@@ -429757,6 +430283,15 @@ Minions Battle:
             store: steam
   steam:
     id: 566200
+Minishoot Adventures:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/SoulGame/Minishoot":
+      tags:
+        - save
+      when:
+        - os: windows
 Ministry of Broadcast:
   cloud:
     gog: true
@@ -431062,6 +431597,12 @@ Missile Command Delta:
         - save
       when:
         - os: windows
+  installDir:
+    Missile Command Delta: {}
+  launch:
+    "<base>/Missile Command Delta.exe":
+      - when:
+          - store: steam
   steam:
     id: 2790160
 "Missile Command: Recharged":
@@ -431660,6 +432201,18 @@ Mitsurugi Kamui Hikae:
         - config
       when:
         - os: windows
+    "<winLocalAppData>/Packages/zakuri5.mitsurugi_5aq1vr3femzg4/LocalState/config.json":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: microsoft
+    "<winLocalAppData>/Packages/zakuri5.mitsurugi_5aq1vr3femzg4/SystemAppData/wgs/<storeUserId>":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: microsoft
   gog:
     id: 1207666043
   installDir:
@@ -433195,6 +433748,11 @@ Momonga Pinball Adventures:
       - when:
           - os: windows
             store: steam
+  registry:
+    HKEY_CURRENT_USER/SOFTWARE/Paladin Studios/Momonga Pinball Adventures:
+      tags:
+        - config
+        - save
   steam:
     id: 491560
 "Mompreneur: Pizza Cooking Life Sim":
@@ -437770,6 +438328,15 @@ Moorhuhn Kart 4:
           - store: steam
   steam:
     id: 3012980
+Moorhuhn X - Crazy Chicken X:
+  cloud:
+    steam: true
+  files:
+    "<base>/Data.sav":
+      tags:
+        - save
+      when:
+        - os: windows
 Moorhuhn schlägt zurück:
   installDir:
     CRAZY CHICKEN Strikes Back: {}
@@ -458322,9 +458889,22 @@ Neverwinter Nights 2:
     id: 2760
 "Neverwinter Nights 2: Enhanced Edition":
   cloud:
+    gog: true
     steam: true
+  files:
+    "<winDocuments>/Neverwinter Nights 2/saves":
+      tags:
+        - save
+      when:
+        - os: windows
   gog:
     id: 1993442013
+  installDir:
+    NWN2 Enhanced Edition: {}
+  launch:
+    "<base>/nwn2.exe":
+      - when:
+          - store: steam
   steam:
     id: 2738630
 "Neverwinter Nights: Enhanced Edition":
@@ -458704,6 +459284,30 @@ New Planets:
           - store: steam
   steam:
     id: 465780
+New Star GP:
+  cloud:
+    steam: true
+  files:
+    "<base>/UserData.txt":
+      tags:
+        - config
+        - save
+      when:
+        - store: steam
+  installDir:
+    New Star GP: {}
+  launch:
+    "<base>/release/NSGP.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/NewStarGames/NSGP:
+      tags:
+        - config
+  steam:
+    id: 2217580
 New Star Manager:
   cloud:
     steam: true
@@ -461036,6 +461640,10 @@ Nightmare Creatures:
         - save
       when:
         - os: windows
+  registry:
+    HKEY_LOCAL_MACHINE/SOFTWARE/Activision/Nightmare Creatures:
+      tags:
+        - config
 Nightmare Files - Clap Clap:
   installDir:
     Nightmare Files - Clap Clap: {}
@@ -464066,6 +464674,23 @@ No Straight Roads:
             store: steam
   steam:
     id: 1726190
+No Sun To Worship:
+  cloud:
+    steam: true
+  files:
+    "<winLocalAppData>/NoSunToWorship/Saved/SaveGames/**/*.sav":
+      when:
+        - store: steam
+  installDir:
+    NoSunToWorship: {}
+  launch:
+    "<base>/Undetected2.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+  steam:
+    id: 2202470
 No Time:
   cloud:
     steam: true
@@ -492394,6 +493019,28 @@ PataNoir:
 Patapon 1 + 2 Replay:
   cloud:
     steam: true
+  files:
+    "<winLocalAppData>/BANDAI NAMCO Entertainment/PATAPON 1+2 REPLAY/Saved/SaveGames/<storeUserId>":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winLocalAppData>/BANDAI NAMCO Entertainment/PATAPON 1+2 REPLAY/Saved/SaveGames/<storeUserId>/P1":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<winLocalAppData>/BANDAI NAMCO Entertainment/PATAPON 1+2 REPLAY/Saved/SaveGames/<storeUserId>/P2":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    PATAPON12_REPLAY: {}
+  launch:
+    "<base>/PATAPON12_REPLAY.exe":
+      - when:
+          - store: steam
   steam:
     id: 2383200
 Patch Quest:
@@ -519460,6 +520107,23 @@ Project Scrapper:
 Project Shield:
   steam:
     id: 585940
+Project Silverfish:
+  cloud:
+    steam: true
+  files:
+    "<winLocalAppData>/SilverFish/Saved/SaveGames/**/*-*.sav":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    Project Silverfish: {}
+  launch:
+    "<base>/SilverFish.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2941710
 Project Skylab:
   installDir:
     Project Skylab: {}
@@ -520135,9 +520799,11 @@ Prologue for a Vacant Kingdom:
     id: 1040490
 Promenade:
   files:
-    "<home>/AppData/LocalLow/Holy Cap/Promenade/stroll_*.xml":
+    "<home>/AppData/LocalLow/Holy Cap/Promenade":
+      tags:
+        - save
       when:
-        - store: steam
+        - os: windows
   installDir:
     Promenade: {}
   launch:
@@ -520930,6 +521596,24 @@ Proviant:
 Proxima Royale:
   steam:
     id: 796530
+Proximate:
+  installDir:
+    PROXIMATE: {}
+  launch:
+    "<base>/proximate-linux/proximate.x86_64":
+      - when:
+          - os: linux
+            store: steam
+    "<base>/proximate-mac/proximate.app":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/proximate-windows/PROXIMATE.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2957800
 Proxy - Ultimate Hacker:
   cloud:
     steam: true
@@ -530654,6 +531338,33 @@ ROS:
             store: steam
   steam:
     id: 862300
+ROTA:
+  files:
+    "<home>/.local/share/ROTA-Harmony/*.json":
+      when:
+        - os: linux
+          store: steam
+    "<winAppData>/ROTA-Harmony/*.json":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    ROTA: {}
+  launch:
+    "<base>/ROTA.app/Contents/MacOS/ROTA":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/ROTA.exe":
+      - when:
+          - os: windows
+            store: steam
+    "<base>/ROTA.x86_64":
+      - when:
+          - os: linux
+            store: steam
+  steam:
+    id: 1993830
 ROTii:
   cloud:
     steam: true
@@ -535652,6 +536363,9 @@ Rasty Pelican:
 Rat Arena:
   steam:
     id: 909130
+Rat Attack!:
+  gog:
+    id: 1583718064
 Rat Hunter:
   files:
     "<base>/Data/SavedGames":
@@ -551698,6 +552412,7 @@ RimWorld:
       - 1547069028
       - 1827857764
       - 1865538500
+      - 1940312433
     steamExtra:
       - 367680
       - 367681
@@ -551706,6 +552421,7 @@ RimWorld:
       - 1392840
       - 1826140
       - 2380740
+      - 3022790
   installDir:
     RimWorld: {}
   launch:
@@ -556025,6 +556741,10 @@ RoboCop 3D:
   steam:
     id: 1681430
 "RoboCop: Rogue City - Unfinished Business":
+  cloud:
+    steam: true
+  gog:
+    id: 1318449508
   steam:
     id: 3527760
 RoboCritters:
@@ -557163,6 +557883,11 @@ Rock of Ages:
   cloud:
     steam: true
   files:
+    "<winLocalAppData>/ROA3/Saved/Config/WindowsNoEditor":
+      tags:
+        - save
+      when:
+        - os: windows
     "<winLocalAppData>/ROA3/Saved/SaveGames":
       tags:
         - save
@@ -559849,6 +560574,10 @@ Rollerdrome:
           - bit: 64
             os: windows
             store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/Roll7/ROLLERDROME:
+      tags:
+        - config
   steam:
     id: 1294420
 Rollers:
@@ -562180,6 +562909,8 @@ Rounds:
   steam:
     id: 1557740
 Routine:
+  id:
+    lutris: routine
   steam:
     id: 606160
 Rover Builder:
@@ -565985,6 +566716,11 @@ Rusty Lake Hotel:
     gog: true
     steam: true
   files:
+    "<home>/Documents/Rusty Lake/Hotel/saveGame.sav":
+      tags:
+        - save
+      when:
+        - os: mac
     "<winAppData>/com.RustyLake.RustyLakeHotel/Local Store/#SharedObjects/RustyLakeHotel.swf/RustySave4.sol":
       tags:
         - save
@@ -566015,6 +566751,11 @@ Rusty Lake Paradise:
     gog: true
     steam: true
   files:
+    "<home>/Documents/Rusty Lake/Paradise/saveGame.sav":
+      tags:
+        - save
+      when:
+        - os: mac
     "<winDocuments>/Rusty Lake/Paradise/saveGame.sav":
       tags:
         - save
@@ -568564,6 +569305,11 @@ STATIONflow:
         - save
       when:
         - os: windows
+    "<xdgConfig>/unity3d/DMM GAMES/STATIONflow/Saved Games":
+      tags:
+        - save
+      when:
+        - os: linux
   installDir:
     STATIONflow: {}
   launch:
@@ -568667,6 +569413,17 @@ STORM AREA 51 ❤️ CUTE ALIEN GIRL EDITION:
           - store: steam
   steam:
     id: 1124660
+STRIDEN:
+  installDir:
+    STRIDEN: {}
+  launch:
+    "<base>/STRIDEN.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+  steam:
+    id: 2052970
 STUMPER:
   installDir:
     Stumper: {}
@@ -568753,6 +569510,23 @@ SUGURI:
           - store: steam
   steam:
     id: 262240
+SULFUR:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/Perfect Random/Sulfur/*.es3":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    SULFUR: {}
+  launch:
+    "<base>/Sulfur.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2124120
 SUM:
   files:
     "<base>/SavesDir/*.json":
@@ -570111,6 +570885,8 @@ Sailaway - The Sailing Simulator:
 Sailor Jump:
   steam:
     id: 1105390
+Sailor Moon Dating Sim:
+  alias: "Sailor Moon Dating Simulator: Moon Maid"
 Sailwind:
   files:
     "<home>/AppData/LocalLow/Raw Lion Workshop/Sailwind":
@@ -578828,18 +579604,18 @@ Sea of Stars:
     id: 1244090
 Sea of Thieves:
   files:
+    "<winLocalAppData>/Athena/Saved/Config/WinGDK":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: microsoft
     "<winLocalAppData>/Athena/Saved/Config/WindowsClient":
       tags:
         - config
       when:
         - os: windows
           store: steam
-    "<winLocalAppData>/Packages/Microsoft.SeaofThieves_8wekyb3d8bbwe/LocalState/Athena/Saved/Config/UWP64":
-      tags:
-        - config
-      when:
-        - os: windows
-          store: microsoft
   installDir:
     Sea of Thieves: {}
   launch:
@@ -597004,6 +597780,8 @@ Silverfall:
     gog: true
   gog:
     id: 1284627191
+  id:
+    lutris: silverfall-earth-awakening
   installDir:
     Silverfall: {}
   launch:
@@ -600686,12 +601464,12 @@ Sky Force Anniversary:
   files:
     "<root>/UserData/<storeUserId>/355050/remote/CloudData.dat":
       tags:
-        - config
         - save
       when:
         - os: windows
           store: steam
   id:
+    lutris: sky-force-anniversary
     steamExtra:
       - 367810
   installDir:
@@ -600715,6 +601493,10 @@ Sky Force Anniversary:
           - bit: 64
             os: linux
             store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/Infinite Dreams/Sky Force Anniversary:
+      tags:
+        - config
   steam:
     id: 355050
 Sky Force Reloaded:
@@ -608930,6 +609712,21 @@ SodaCity:
             store: steam
   steam:
     id: 424210
+Sofia in Exchange for Lies:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/MUTAN Inc_/Sofia in Exchange for Lies/User/Save/{64bitSteamID}/*.sav":
+      when:
+        - store: steam
+  installDir:
+    Sofia in Exchange for Lies: {}
+  launch:
+    "<base>/Sofia in Exchange for Lies.exe":
+      - when:
+          - store: steam
+  steam:
+    id: 3326660
 Soft Body:
   files:
     "<winLocalAppData>/Soft_Body/asyncsavegroup/softbodysave.sav":
@@ -614696,11 +615493,16 @@ Soulslayer:
     id: 466810
 "Soulslinger: Envoy of Death":
   cloud:
+    gog: true
     steam: true
   files:
-    "<winLocalAppData>/Soulslinger/Saved/SaveGames/**/*.sav":
+    "<winLocalAppData>/Soulslinger/Saved/SaveGames":
+      tags:
+        - save
       when:
-        - store: steam
+        - os: windows
+  gog:
+    id: 1383972634
   installDir:
     Soulslinger - Envoy of Death: {}
   launch:
@@ -614750,6 +615552,16 @@ Soulstone Survivors:
         - save
       when:
         - os: windows
+    "<home>/Library/Application Support/com.GameSmithing.SoulstoneSurvivors":
+      tags:
+        - save
+      when:
+        - os: mac
+    "<home>/Library/Preferences/com.GameSmithing.SoulstoneSurvivors.plist":
+      tags:
+        - config
+      when:
+        - os: mac
   gog:
     id: 1082969636
   id:
@@ -614951,6 +615763,17 @@ Soundodger+:
   steam:
     id: 247140
 Sounds of Her Love:
+  files:
+    "<base>/game/saves":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<winAppData>/RenPy/Sounds of Her Love-1475342026":
+      tags:
+        - save
+      when:
+        - os: windows
   installDir:
     Sounds of Her Love: {}
   launch:
@@ -619249,6 +620072,27 @@ SpaceBourne:
             store: steam
   steam:
     id: 732240
+SpaceBourne 2:
+  files:
+    "<winLocalAppData>/SB2/Saved/SaveGames":
+      when:
+        - os: windows
+          store: steam
+    "<winLocalAppData>/SB2/Saved/SaveGames/**/*.sav":
+      when:
+        - os: windows
+          store: steam
+  gog:
+    id: 1649813385
+  installDir:
+    SpaceBourne 2: {}
+  launch:
+    "<base>/SpaceBourne2.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 1646850
 SpaceBullet:
   installDir:
     SpaceBullet: {}
@@ -637424,8 +638268,10 @@ Stella of The End:
     steam: true
   files:
     "<base>/savedata":
+      tags:
+        - save
       when:
-        - store: steam
+        - os: windows
   installDir:
     Stella of The End: {}
   launch:
@@ -643917,6 +644763,38 @@ Stronghold Crusader 2:
 "Stronghold Crusader: Definitive Edition":
   cloud:
     steam: true
+  files:
+    "<home>/AppData/LocalLow/Firefly Studios/Stronghold Crusader Definitive Edition/Maps":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/Firefly Studios/Stronghold Crusader Definitive Edition/Saves":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/Firefly Studios/Stronghold Crusader Definitive Edition/UserWorkshopMaps":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/Firefly Studios/Stronghold Crusader Definitive Edition/settings.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/Firefly Studios/Stronghold Crusader Definitive Edition/skirmishmasters.cfg":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    Stronghold Crusader Definitive Edition: {}
+  launch:
+    "<base>/Stronghold Crusader Definitive Edition.exe":
+      - when:
+          - store: steam
   steam:
     id: 3024040
 Stronghold Kingdoms:
@@ -659594,6 +660472,30 @@ Swords with spice:
             store: steam
   steam:
     id: 918320
+Swordship:
+  cloud:
+    steam: true
+  files:
+    "<root>/userdata/<storeUserId>/1804270":
+      tags:
+        - config
+        - save
+      when:
+        - store: steam
+  gog:
+    id: 1652014822
+  installDir:
+    Swordship: {}
+  launch:
+    "<base>/swordship.exe":
+      - when:
+          - store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/Digital Kingdom/Swordship:
+      tags:
+        - config
+  steam:
+    id: 1804270
 Swordsman:
   installDir:
     Swordsman: {}
@@ -664652,6 +665554,16 @@ Taito Legends 2:
         - save
       when:
         - os: windows
+Taiwan Coolfox:
+  installDir:
+    Taiwan Coolfox: {}
+  launch:
+    "<base>/Taiwan Coolfox Game/Taiwan Coolfox Game.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 3615920
 Take Care of the Paperwork:
   installDir:
     Take Care of the Paperwork: {}
@@ -687546,20 +688458,30 @@ The Expression Amrilato:
     gog: true
     steam: true
   files:
-    "<home>/.renpy/The Expression Amrilato":
-      when:
-        - os: linux
-          store: steam
-    "<home>/Library/RenPy/The Expression Amrilato":
-      when:
-        - os: mac
-          store: steam
-    "<winAppData>/RenPy/The Expression Amrilato":
+    "<base>/game/saves":
+      tags:
+        - save
       when:
         - os: windows
-          store: steam
+    "<home>/.renpy/The Expression Amrilato":
+      tags:
+        - save
+      when:
+        - os: linux
+    "<home>/Library/RenPy/The Expression Amrilato":
+      tags:
+        - save
+      when:
+        - os: mac
+    "<winAppData>/RenPy/The Expression Amrilato":
+      tags:
+        - save
+      when:
+        - os: windows
   gog:
     id: 1907193220
+  id:
+    lutris: the-expression-amrilato
   installDir:
     The Expression Amrilato: {}
   launch:
@@ -688657,7 +689579,7 @@ The Firlyn Stones:
     The First Berserker Khazan: {}
   launch:
     "<base>/KZ.exe":
-      - arguments: "-steam -nosplash"
+      - arguments: "-steam -nosplash -UseWarhavenGpuCrashFix"
         when:
           - os: windows
             store: steam
@@ -692453,7 +693375,7 @@ The HinterLands:
         - config
       when:
         - os: windows
-The Hive (2016):
+The Hive:
   cloud:
     steam: true
   files:
@@ -692472,6 +693394,8 @@ The Hive (2016):
         - save
       when:
         - os: linux
+  gog:
+    id: 1502691388
   installDir:
     The Hive: {}
   launch:
@@ -692495,6 +693419,8 @@ The Hive (2016):
             store: steam
   steam:
     id: 325730
+The Hive (2016):
+  alias: The Hive
 The Hobbit (2003):
   files:
     "<winDocuments>/The Hobbit":
@@ -693213,6 +694139,8 @@ The Hunter:
       when:
         - os: windows
           store: steam
+  id:
+    lutris: thehunter-call-of-the-wild
   installDir:
     theHunterCotW: {}
   launch:
@@ -695905,6 +696833,9 @@ The Labyrinth of Time:
         - config
   steam:
     id: 266980
+The Lacerator:
+  steam:
+    id: 2339330
 The Lady:
   id:
     steamExtra:
@@ -705037,6 +705968,16 @@ The Past Within:
         - config
       when:
         - os: windows
+    "<home>/Library/Application Support/com.RustyLake.ThePastWithin/Serialization/SaveFiles":
+      tags:
+        - save
+      when:
+        - os: mac
+    "<home>/Library/Application Support/com.RustyLake.ThePastWithin/Serialization/SaveFiles/Settings.json":
+      tags:
+        - config
+      when:
+        - os: mac
   gog:
     id: 1273071930
   id:
@@ -711372,6 +712313,8 @@ The Sky Climber:
   steam:
     id: 958690
 The Skyland Chronicles:
+  cloud:
+    steam: true
   id:
     lutris: the-skyland-chronicles
   steam:
@@ -717381,6 +718324,11 @@ The White Door:
     gog: true
     steam: true
   files:
+    "<home>/Documents/Rusty Lake/TheWhiteDoor/saveGame.sav":
+      tags:
+        - save
+      when:
+        - os: mac
     "<winDocuments>/Rusty Lake/TheWhiteDoor":
       tags:
         - config
@@ -718331,6 +719279,13 @@ The Works of Mercy:
 "The World 3: Rise of Demon":
   steam:
     id: 563730
+"The World Ends with You: ReSolo":
+  files:
+    "[hard drive]/Users/[profile name]/AppData/LocalLow/Square Enix/TWEWY Solo":
+      tags:
+        - config
+      when:
+        - os: windows
 The World II (Hunting BOSS):
   alias: "The World II: Hunting Boss"
 "The World II: Hunting Boss":
@@ -721389,6 +722344,28 @@ This War of Mine:
             store: steam
   steam:
     id: 282070
+This Way Madness Lies:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/Zeboyd/This Way Madness Lies":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    This Way Madness Lies: {}
+  launch:
+    "<base>/This Way Madness Lies.exe":
+      - when:
+          - os: windows
+            store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/Zeboyd/This Way Madness Lies:
+      tags:
+        - config
+  steam:
+    id: 1318970
 This World Unknown:
   files:
     "<winAppData>/RenPy/This-World-Unknown-1.0":
@@ -730831,6 +731808,31 @@ Tonight We Riot:
 "Tony Hawk's Pro Skater 3 + 4":
   cloud:
     steam: true
+  files:
+    "<winLocalAppData>/IronGalaxy/THPS/GraphicsSettings.ini":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winLocalAppData>/IronGalaxy/THPS/InputSettings.ini":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winLocalAppData>/IronGalaxy/THPS/Saved/SaveGames":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    THPS34: {}
+  launch:
+    "<base>/Base/Binaries/Win64/THPS34.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+        workingDir: "<base>/Base/Binaries/Win64"
   steam:
     id: 2545710
 "Tony Hawk's Pro Skater 4":
@@ -749340,16 +750342,10 @@ Tyrian:
 "Tyrion Cuthbert: Attorney of the Arcane":
   files:
     "<home>/AppData/LocalLow/Diamondhenge Entertainment/Attorney of the Arcane/Save Data":
+      tags:
+        - save
       when:
-        - store: steam
-    "<home>/Library/Application Support/Diamondhenge Entertainment/Attorney of the Arcane/Save Data":
-      when:
-        - os: mac
-          store: steam
-    "<xdgConfig>/unity3d/Diamondhenge Entertainment/Attorney of the Arcane/Save Data":
-      when:
-        - os: linux
-          store: steam
+        - os: windows
   id:
     steamExtra:
       - 2487580
@@ -751597,22 +752593,18 @@ Ultimate Zombie Defense:
   cloud:
     steam: true
   files:
-    "<home>/AppData/LocalLow/TerrorDogStudio/Ultimate Zombie Defense/steam_userdata/<storeUserId>/**/*.json":
+    "<home>/AppData/LocalLow/TerrorDogStudio/Ultimate Zombie Defense/Settings.json":
+      tags:
+        - config
       when:
         - os: windows
-          store: steam
-    "<home>/AppData/LocalLow/TerrorDogStudio/Ultimate Zombie Defense/steam_userdata/<storeUserId>/**/*.save":
+    "<home>/AppData/LocalLow/TerrorDogStudio/Ultimate Zombie Defense/steam_userdata/[steamID64]":
+      tags:
+        - save
       when:
         - os: windows
-          store: steam
-    "<home>/Library/Application Support/TerrorDogStudio/Ultimate Zombie Defense/steam_userdata/<storeUserId>/**/*.json":
-      when:
-        - os: mac
-          store: steam
-    "<home>/Library/Application Support/TerrorDogStudio/Ultimate Zombie Defense/steam_userdata/<storeUserId>/**/*.save":
-      when:
-        - os: mac
-          store: steam
+  id:
+    lutris: ultimate-zombie-defense
   installDir:
     Ultimate Zombie Defense: {}
   launch:
@@ -751636,6 +752628,30 @@ Ultimate Zombie Defense:
             store: steam
   steam:
     id: 1035510
+Ultimate Zombie Defense 2:
+  files:
+    "<home>/.config/unity3d/TerrorDogStudio/Ultimate Zombie Defense 2/steam_userdata/<storeUserId>/*.save":
+      when:
+        - os: linux
+          store: steam
+    "<home>/AppData/LocalLow/TerrorDogStudio/Ultimate Zombie Defense 2/steam_userdata/<storeUserId>/*.save":
+      when:
+        - store: steam
+  installDir:
+    Ultimate Zombie Defense 2: {}
+  launch:
+    "<base>/Ultimate Zombie Defense 2.x86_64":
+      - when:
+          - bit: 64
+            os: linux
+            store: steam
+    "<base>/Ultimate Zombie Defense 2_64.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+  steam:
+    id: 1765300
 Ultimo Reino:
   installDir:
     Ultimo Reino: {}
@@ -763483,13 +764499,10 @@ Vectronom:
     steam: true
   files:
     "<home>/AppData/LocalLow/Ludopium/Vectronom/savedata":
+      tags:
+        - save
       when:
         - os: windows
-          store: steam
-    "<home>/Library/Application Support/Ludopium/Vectronom/savedata":
-      when:
-        - os: mac
-          store: steam
   installDir:
     Vectronom: {}
   launch:
@@ -776520,14 +777533,14 @@ Warhalla:
         - config
       when:
         - os: mac
-    "<winDocuments>/My Games/Dawn of War 2":
-      tags:
-        - config
-      when:
-        - os: windows
     "<winDocuments>/My Games/Dawn of War 2/Saved Games":
       tags:
         - save
+      when:
+        - os: windows
+    "<winDocuments>/My Games/Dawn of War 2/Settings":
+      tags:
+        - config
       when:
         - os: windows
     "<xdgData>/feral-interactive/Dawn of War II/VFS/User/AppData/Roaming/My Games/Dawn of War 2":
@@ -777259,6 +778272,34 @@ Warhalla:
   cloud:
     gog: true
     steam: true
+  files:
+    "<base>/data/config/audio.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<root>/userdata/<storeUserId>/3169520":
+      tags:
+        - save
+      when:
+        - store: steam
+    "<winDocuments>/Saved Games/SEGA/Space Marine/mainConfig.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winDocuments>/Saved Games/SEGA/Space Marine/mainConfigGOG.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: gog
+    "<winLocalAppData>/GOG.com/Galaxy/Applications/58021766719948447/Storage/Shared/Files/profile_info.bin":
+      tags:
+        - save
+      when:
+        - os: windows
+          store: gog
   gog:
     id: 1197056652
   installDir:
@@ -784201,6 +785242,9 @@ Wetpants:
     Wetpants: {}
   steam:
     id: 1134730
+Wetrix:
+  gog:
+    id: 2062199480
 Wetwork:
   installDir:
     Wetwork: {}
@@ -793133,6 +794177,16 @@ Wolfstride:
             store: steam
   steam:
     id: 1331210
+"Wolfteam: Reboot":
+  installDir:
+    WolfteamReboot: {}
+  launch:
+    "<base>/NyxLauncher.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2170050
 Wolves Team:
   installDir:
     wolves team: {}
@@ -794052,6 +795106,29 @@ Word Forward:
 "Word Killer: Zorgilonian Chronicles":
   steam:
     id: 574620
+Word Play:
+  cloud:
+    steam: true
+  files:
+    "<home>/AppData/LocalLow/Game Maker's Toolkit/Word Play":
+      tags:
+        - config
+        - save
+      when:
+        - os: windows
+  installDir:
+    Word Play: {}
+  launch:
+    "<base>/Word Play.app":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/Word Play.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 3586660
 Word Rescue:
   files:
     "<base>/*.WR1":
@@ -812405,6 +813482,8 @@ Zzzzz:
     id: 847100
 Тёмное отражение (Dark Reflection):
   alias: Dark Reflection
+Хранители. Ключ жизни:
+  alias: "Keepers: The Key of Life"
 ШП:
   installDir:
     ShP: {}

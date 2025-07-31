@@ -4,7 +4,7 @@ version:
   - 29
   - 1
 release:
-  checked: "2025-07-06T03:21:34.000485253Z"
+  checked: "2025-07-16T10:34:36.167763049Z"
   latest: 0.29.1
 migrations:
   adopted_cache: true
@@ -12,9 +12,9 @@ migrations:
   set_default_manifest_url_to_null: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"4f36043dc5eceba9ca99081d92e32906ea833dc0aef9574cbd2324a0bf58ca8a\""
-    checked: "2025-07-06T03:21:34.830492486Z"
-    updated: "2025-07-06T03:21:34.830492486Z"
+    etag: "W/\"c6cc5fb9deabedbc205903e8d05310bef72d795b505f1c08331de87bbd60c22b\""
+    checked: "2025-07-16T10:34:36.963969633Z"
+    updated: "2025-07-16T10:34:36.963969633Z"
 roots:
   - store: heroic
     path: /home/buymymojo/.config/heroic
@@ -53,6 +53,7 @@ backup:
     - "Cyber Knights: Flashpoint"
     - Cyberpunk 2077
     - Deadlock
+    - "Death Stranding Director's Cut"
     - Deltarune
     - "Divinity: Original Sin II - Definitive Edition"
     - Dolphin

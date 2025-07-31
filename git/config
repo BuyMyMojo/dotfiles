@@ -33,6 +33,7 @@
 	autoSetupRemote = true
 	default = current
 	followTags = true
+	autoSetupRemote = true
 [pull]
 	default = current
 	rebase = true

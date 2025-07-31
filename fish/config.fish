@@ -23,3 +23,4 @@ fish_add_path $(go env GOBIN)
 fish_add_path $(go env GOPATH)/bin
 
 starship init fish | source
+zoxide init fish | source
