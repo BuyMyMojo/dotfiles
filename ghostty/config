@@ -1,0 +1,8 @@
+font-family = "TX02 Nerd Font Mono Plus Font Awesome Plus Font Awesome Extension Plus Octicons Plus Power Symbols Plus Codicons Plus Pomicons Plus Font Logos Plus Material Design Icons Plus Weather Icons"
+font-size = 10
+window-vsync = false
+window-height = 50
+window-width = 200
+image-storage-limit = 4294967295
+shell-integration-features = true
+scrollback-limit = 6969696969
