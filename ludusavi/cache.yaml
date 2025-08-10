@@ -4,7 +4,7 @@ version:
   - 29
   - 1
 release:
-  checked: "2025-07-16T10:34:36.167763049Z"
+  checked: "2025-08-10T01:28:51.040229559Z"
   latest: 0.29.1
 migrations:
   adopted_cache: true
@@ -12,9 +12,9 @@ migrations:
   set_default_manifest_url_to_null: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"c6cc5fb9deabedbc205903e8d05310bef72d795b505f1c08331de87bbd60c22b\""
-    checked: "2025-07-16T10:34:36.963969633Z"
-    updated: "2025-07-16T10:34:36.963969633Z"
+    etag: "W/\"2a72e6cc6e09bf35e01d5d8a2c6a0aa7282483bd6837b42476fd9ce659992b57\""
+    checked: "2025-08-10T01:28:52.779587273Z"
+    updated: "2025-08-10T01:28:52.779587273Z"
 roots:
   - store: heroic
     path: /home/buymymojo/.config/heroic
@@ -71,8 +71,8 @@ backup:
     - Helldivers 2
     - Learn Japanese To Survive! Hiragana Battle
     - Lethal Company
-    - Lies of P
     - Luanti
+    - Mecha Break
     - "Metal Gear Solid 3: Snake Eater - Master Collection Version"
     - "Metaphor: ReFantazio"
     - Minecraft-Prisim
