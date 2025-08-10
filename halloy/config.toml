@@ -22,3 +22,11 @@ channels = [
     "Global",
     "ly" # nta (did:plc:uc7e6sv2dk26iqxwuh4jw2yt)
     ]
+
+[servers.girlthing]
+nickname = "aria-coffee"
+server = "irc.girlthi.ng"
+channels = [
+    "#lobby",
+    "#girlthi.ng"
+    ]
