@@ -1,20 +1,12 @@
 // From Shadertoy https://www.shadertoy.com/view/XfKfWd
-#ifdef NOT_SHADERTOY
-// We include these definitions to assist other environments (untested)
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iTime;                 // shader playback time (in seconds)
-uniform float     iTimeDelta;            // render time (in seconds)
-uniform float     iFrameRate;            // shader frame rate
-uniform int       iFrame;                // shader playback frame
-uniform float     iChannelTime[4];       // channel playback time (in seconds)
-uniform vec3      iChannelResolution[4]; // channel resolution (in pixels)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-uniform sampler2D iChannel0;             // input channel 0
-uniform sampler2D iChannel1;             // input channel 1
-uniform sampler2D iChannel2;             // input channel 2
-uniform sampler2D iChannel3;             // input channel 3
-uniform vec4      iDate;                 // (year, month, day, time in seconds)
-#endif
+// - Improved version coming January 2025
+// - See accompanying article https://blurbusters.com/crt
+// - To study more about display science & physics, see Research Portal https://blurbusters.com/area51
+
+// This version has been unofficialy modified to work with mpv.
+//
+// $ cp crt-simulator.glsl ~/.config/mpv/shaders/
+// $ mpv --video-sync=display-resample --vo=gpu-next --glsl-shader=~~/shaders/crt-simulator.glsl --glsl-shader-opts=FRAMES_PER_HZ=4 file.mkv
 
 /*********************************************************************************************************************/
 //
@@ -103,37 +95,63 @@ uniform vec4      iDate;                 // (year, month, day, time in seconds)
 //
 /*********************************************************************************************************************/
 
+//-------------------------------------------------------------------------------------------------
+// mpv shader params
+
+// change defaults below or use e.g. --glsl-shader-opts=FRAMES_PER_HZ=4.0,SPLITSCREEN=1
+
+// FRAMES_PER_HZ
+//   Ratio of native Hz per CRT Hz.  More native Hz per CRT Hz simulates CRT butter.
+//     - Use 4.0 for 60fps at 240Hz realtime.
+//     - Use 2.4 for 60fps at 144Hz realtime.
+//     - Use 2.75 for 60fps at 165Hz realtime.
+//     - Use ~100 for super-slo-motion.
+//     - Best to keep it integer divisor but not essential (works!)
+//
+// GAIN_VS_BLUR
+//   Brightness-vs-motionblur tradeoff for bright pixel.
+//     - Defacto simulates fast/slow phosphor.
+//     - 1.0 is unchanged brightness (same as non-CRT, but no blur reduction for brightest pixels, only for dimmer piels).
+//     - 0.5 is half brightness spread over fewer frames (creates lower MPRT persistence for darker pixels).
+//     - ~0.7 recommended for 240Hz+, ~0.5 recommended for 120Hz due to limited inHz:outHz ratio.
+//
+// SPLITSCREEN
+//   1 to enable splitscreen to compare to non-CRT, 0 to disable splitscreen
+
+//!PARAM FRAMES_PER_HZ
+//!TYPE float
+6.0
+
+//!PARAM GAIN_VS_BLUR
+//!TYPE float
+//!MAXIMUM 1.0
+0.7
+
+//!PARAM SPLITSCREEN
+//!TYPE DEFINE
+0
+
+
+//!TEXTURE PREV
+//!SIZE 2048 2048 32
+//!FORMAT rgb16
+//!STORAGE
+
+//!HOOK OUTPUT
+//!BIND HOOKED
+//!BIND PREV
+//!DESC [CRT Beam Simulator]
+
 //------------------------------------------------------------------------------------------------
 // Constants Definitions
 
-// Play with the documented constants!
-// - REALTIME: Use FRAMES_PER_HZ=4 for 240Hz and FRAMES_PER_HZ=8 for 480Hz, to simulate a 60Hz tube in realtime
-// - SLOMO: Use crazy large FRAMES_PER_HZ numbers to watch a CRT tube like a slo-motion video. Try FRAMES_PER_HZ=100!
-// - FRAMESTEP: Use low frame rates to inspect frames.  Try FRAMES_PER_HZ=8 and FPS_DIVISOR=0.02! 
-// All are floats (keep a .0 for integers)
-
-#define MOTION_SPEED    10.0
-
-  // Ratio of native Hz per CRT Hz.  More native Hz per CRT Hz simulates CRT butter.
-  //   - Use 4.0 for 60fps at 240Hz realtime.
-  //   - Use 2.4 for 60fps at 144Hz realtime.
-  //   - Use 2.75 for 60fps at 165Hz realtime.
-  //   - Use ~100 for super-slo-motion.
-  //   - Best to keep it integer divisor but not essential (works!)
-#define FRAMES_PER_HZ   4.0
+  // Depending on the file this doesn't seem to work well. Comment out for generic fallback using GAMMA defined below.
+//#define MPV_LINEARIZE
 
   // Your display's gamma value. Necessary to prevent horizontal-bands artifacts.
 #define GAMMA           2.4
 
-  // Brightness-vs-motionblur tradeoff for bright pixel.
-  //   - Defacto simulates fast/slow phosphor. 
-  //   - 1.0 is unchanged brightness (same as non-CRT, but no blur reduction for brightest pixels, only for dimmer piels).
-  //   - 0.5 is half brightness spread over fewer frames (creates lower MPRT persistence for darker pixels).
-  //   - ~0.7 recommended for 240Hz+, ~0.5 recommended for 120Hz due to limited inHz:outHz ratio.
-#define GAIN_VS_BLUR    0.7
-
   // Splitscreen versus mode for comparing to non-CRT-simulated
-#define SPLITSCREEN     1        // 1 to enable splitscreen to compare to non-CRT, 0 to disable splitscreen
 #define SPLITSCREEN_X   0.50     // For user to compare; horizontal splitscreen percentage (0=verticals off, 0.5=left half, 1=full sim).
 #define SPLITSCREEN_Y   0.00     // For user to compare; vertical splitscreen percentage (0=horizontal off, 0.5=bottom half, 1=full sim).
 #define SPLITSCREEN_BORDER_PX 2  // Splitscreen border thickness in pixels
@@ -162,6 +180,12 @@ uniform vec4      iDate;                 // (year, month, day, time in seconds)
   //   - 4 reverse portrait (right to left)
 #define SCAN_DIRECTION 1
 
+  // Hack for storing previous frames
+#define PREV_TILE_SZ 2048
+#define PREV_TILE_SPAN 4
+#define PREV_TILES (PREV_TILE_SPAN * PREV_TILE_SPAN)
+ivec3 storageOff;
+
 //-------------------------------------------------------------------------------------------------
 // Utility Macros
 
@@ -176,13 +200,21 @@ float SelF1(float a, float b, bool p) { return p ? b : a; }
 // LCD SAVER (prevent image retention)
 // Adds a slew to FRAMES_PER_HZ when ANTI_RETENTION is enabled and FRAMES_PER_HZ is an exact even integer.
 // We support non-integer FRAMES_PER_HZ, so this is a magically convenient solution
-const float EFFECTIVE_FRAMES_PER_HZ = (LCD_ANTI_RETENTION && IS_EVEN_INTEGER(float(FRAMES_PER_HZ))) 
+float EFFECTIVE_FRAMES_PER_HZ = (LCD_ANTI_RETENTION && IS_EVEN_INTEGER(float(FRAMES_PER_HZ))) 
                                       ? float(FRAMES_PER_HZ) + LCD_INVERSION_COMPENSATION_SLEW 
                                       : float(FRAMES_PER_HZ);
 
 //-------------------------------------------------------------------------------------------------
 // sRGB Encoding and Decoding Functions, to gamma correct/uncorrect
 
+#ifdef MPV_LINEARIZE
+vec3 linear2srgb(vec3 c){
+    return vec3(delinearize(vec4(c, 1.0)));
+}
+vec3 srgb2linear(vec3 c){
+    return vec3(linearize(vec4(c, 1.0)));
+}
+#else
 // Encode linear color to sRGB. (applies gamma curve)
 float linear2srgb(float c){
     vec3 j = vec3(0.0031308 * 12.92, 12.92, 1.0 / GAMMA);
@@ -202,48 +234,25 @@ float srgb2linear(float c){
 vec3 srgb2linear(vec3 c){
   return vec3(srgb2linear(c.r), srgb2linear(c.g), srgb2linear(c.b));
 }
+#endif
 
 //------------------------------------------------------------------------------------------------
 // Gets pixel from the unprocessed framebuffer.
 //
-// Placeholder for accessing the 3 trailing unprocessed frames (for simulating CRT on)
-//   - Frame counter represents simulated CRT refresh cycle number.
-//   - Always assign numbers to your refresh cycles. For reliability, keep a 3 frame trailing buffer.
-//   - We index by frame counter because it is necessary for blending adjacent CRT refresh cycles, 
-//      for the phosphor fade algorithm on old frame at bottom, and new frames at top.
-//   - Framebuffer to retrieve from should be unscaled (e.g. original game resolution or emulator resolution).
-//   - (If you do optional additional processing such as scaling+scanlines+masks, do it post-processing after this stage)
-// DEMO version:
-//   - We cheat by horizontally shifting shifted pixel reads from a texture.
-// PRODUCTION version:
-//   - Put your own code to retrieve a pixel from your series of unprocessed frame buffers.
-//     IMPORTANT: For integration into firmware/software/emulators/games, this must be executed 
-//     at refresh cycle granularity independently of your underlying games' framerate! 
-//     There are three independent frequencies involved:
-//     - Native Hz (your actual physical display)
-//     - Simulated CRT Hz (Hz of simulated CRT tube)
-//     - Underlying content frame rate (this shader doesn't need to know; TODO: Unless you plan to simulate VRR-CRT)
-//
 vec3 getPixelFromOrigFrame(vec2 uv, float getFromHzNumber, float currentHzCounter)
 {
-
-    // We simulate missing framebuffers (for accurate real world case)
-    if ((getFromHzNumber > currentHzCounter) ||          // Frame not rendered yet
-        (getFromHzNumber < currentHzCounter - 2.0)) {    // Frame over 3 frames ago
-        return vec3(0.0, 0.0, 0.0);
+    // (ignoring uv param which is always current pos)
+    if (getFromHzNumber == currentHzCounter) {
+        return HOOKED_tex(HOOKED_pos).rgb;
     }
-
-    // Continuous horizontal shift depending on hzCounter
-    float shiftAmount = MOTION_SPEED / 1000.0;
-    float baseShift = fract(getFromHzNumber * shiftAmount);
-
-    // We'll offset uv.x by baseShift, and round-off to screen coordinates to avoid seam artifacts
-    float px = 1.0 / iResolution.x;
-    uv.x = mod(uv.x + baseShift + px*0.1, 1.0) - px*0.1;
-
-    // Sample texture with no mip (textureLod)
-    vec4 c = textureLod(iChannel0, uv, 0.0);
-    return c.rgb;
+    if (getFromHzNumber == currentHzCounter - 1) {
+        ivec3 flipStorageOff = ivec3(storageOff.xy, (storageOff.z + PREV_TILES) % (PREV_TILES * 2));
+        return imageLoad(PREV, flipStorageOff).rgb;
+    }
+    if (getFromHzNumber == currentHzCounter - 2) {
+        return imageLoad(PREV, storageOff).rgb;
+    }
+    return vec3(0.0);
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -340,10 +349,11 @@ vec3 getPixelFromSimulatedCRT(vec2 uv, float crtRasterPos, float crtHzCounter, f
 //-------------------------------------------------------------------------------------------------
 // Main Image Function
 //
-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+vec4 hook() {
+    vec3 fragColor;
 
     // uv: Normalized coordinates ranging from (0,0) at the bottom-left to (1,1) at the top-right.
-    vec2 uv = fragCoord / iResolution.xy;
+    vec2 uv = vec2(HOOKED_pos.x, 1 - HOOKED_pos.y);
     
     vec4 c = vec4(0.0, 0.0, 0.0, 1.0);
 
@@ -351,13 +361,21 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // CRT beam calculations
     
     // Frame counter, which may be compensated by slo-mo modes (FPS_DIVISOR). Does not need to be integer divisible.
-    float effectiveFrame = floor(float(iFrame) * FPS_DIVISOR);
+    float effectiveFrame = floor(float(frame) * FPS_DIVISOR);
 
     // Normalized raster position [0..1] representing current position of simulated CRT electron beam
     float crtRasterPos = mod(effectiveFrame, EFFECTIVE_FRAMES_PER_HZ) / EFFECTIVE_FRAMES_PER_HZ;
 
     // CRT refresh cycle counter
     float crtHzCounter = floor(effectiveFrame / EFFECTIVE_FRAMES_PER_HZ);
+
+    //-------------------------------------------------------------------------------------------------
+    // Get offset in oldest frame storage - unprocessed color will be saved here after final use
+    // Broken into 4x4 (flattened to 16) chunks of max storage texture size 2048x2048
+    ivec2 texPos = ivec2(HOOKED_pos * HOOKED_size);
+    ivec2 chunk = texPos / PREV_TILE_SZ;
+    int flatChunk = (chunk.x * PREV_TILE_SPAN) + chunk.y;
+    storageOff = ivec3(texPos % PREV_TILE_SZ, (int(crtHzCounter) % 2) * PREV_TILES + flatChunk);
 
 #if SPLITSCREEN == 1
     //-------------------------------------------------------------------------------------------------
@@ -368,8 +386,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     bool crtArea = !((uv.x > SPLITSCREEN_X) && (uv.y > SPLITSCREEN_Y));
 
     // Calculate border regions (in pixels)
-    float borderXpx = abs(fragCoord.x - SPLITSCREEN_X * iResolution.x);
-    float borderYpx = abs(fragCoord.y - SPLITSCREEN_Y * iResolution.y);
+    float borderXpx = abs((uv.x - SPLITSCREEN_X) * HOOKED_size.x);
+    float borderYpx = abs((uv.y - SPLITSCREEN_Y) * HOOKED_size.y);
     
     // Border only exists in the non-BFI region (x > SPLITSCREEN_X || y > SPLITSCREEN_Y)
     bool inBorderX = borderXpx < float(SPLITSCREEN_BORDER_PX) && uv.y > SPLITSCREEN_Y;
@@ -379,7 +397,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // We #ifdef the if statement away for shader efficiency (though this specific one didn't affect performance)
     if (crtArea) {
 #endif
-
         //-----------------------------------------------------------------------------------------
         // Get CRT simulated version of pixel
         fragColor.rgb = getPixelFromSimulatedCRT(uv, crtRasterPos, crtHzCounter, EFFECTIVE_FRAMES_PER_HZ);
@@ -387,14 +404,22 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 #if SPLITSCREEN == 1
     }
     else if (!inBorder) {
-        fragColor.rgb = getPixelFromOrigFrame(uv, crtHzCounter, crtHzCounter);
+        fragColor.rgb = getPixelFromOrigFrame(uv, crtHzCounter-1, crtHzCounter);
 #if SPLITSCREEN_MATCH_BRIGHTNESS == 1
         // Brightness compensation for unprocessed pixels through similar gamma-curve (match gamma of simulated CRT)
         fragColor.rgb = srgb2linear(fragColor.rgb) * GAIN_VS_BLUR;
         fragColor.rgb = clampPixel(linear2srgb(fragColor.rgb));
 #endif
+    } else {
+        fragColor.rgb = vec3(0.0);
     }
 #endif
+
+    if (mod(effectiveFrame + 1, EFFECTIVE_FRAMES_PER_HZ) < 1.0) {
+        imageStore(PREV, storageOff, vec4(HOOKED_texOff(0).rgb, 0.0));
+    }
+
+    return vec4(fragColor, 1.0);
 }
 
 //-------------------------------------------------------------------------------------------------

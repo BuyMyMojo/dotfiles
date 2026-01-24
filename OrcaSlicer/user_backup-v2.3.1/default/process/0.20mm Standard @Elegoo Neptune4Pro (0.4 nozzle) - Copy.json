@@ -1,0 +1,11 @@
+{
+    "from": "User",
+    "inherits": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "name": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "post_process": [
+        "~/bin/ElegooNeptuneThumbnails-Prusa --printer=NEPTUNE4PRO --currency=$"
+    ],
+    "print_settings_id": "0.20mm Standard @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "version": "2.2.0.4"
+}

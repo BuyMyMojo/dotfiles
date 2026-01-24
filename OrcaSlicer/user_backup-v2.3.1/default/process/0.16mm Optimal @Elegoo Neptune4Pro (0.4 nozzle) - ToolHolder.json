@@ -1,0 +1,26 @@
+{
+    "brim_type": "brim_ears",
+    "brim_width": "5",
+    "extra_perimeters_on_overhangs": "1",
+    "from": "User",
+    "fuzzy_skin": "external",
+    "fuzzy_skin_point_distance": "0.3",
+    "inherits": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle)",
+    "inner_wall_speed": "225",
+    "is_custom_defined": "0",
+    "name": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle) - ToolHolder",
+    "post_process": [
+        "G:\\.bin\\ElegooNeptuneThumbnails-Prusa.exe --printer=NEPTUNE4PRO --currency=$"
+    ],
+    "print_settings_id": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle) - ToolHolder",
+    "reduce_crossing_wall": "1",
+    "skirt_loops": "2",
+    "sparse_infill_density": "30%",
+    "sparse_infill_pattern": "lightning",
+    "sparse_infill_speed": "300",
+    "support_type": "tree(auto)",
+    "travel_speed": "500",
+    "version": "2.1.0.0",
+    "wall_loops": "2",
+    "wall_sequence": "inner-outer-inner wall"
+}

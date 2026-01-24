@@ -1,6 +1,10 @@
 {
-  "attempt_count": 1,
-  "splits" : [
-    {}
+  "attempt_count": 2,
+  "splits": [
+    {
+      "time": "0.000000",
+      "best_time": "0.000000",
+      "best_segment": "0.000000"
+    }
   ]
 }

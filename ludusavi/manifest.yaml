@@ -31773,6 +31773,23 @@ Alpha Protocol:
           - store: steam
   steam:
     id: 34010
+Alpha Response:
+  files:
+    "<winLocalAppData>/KillOption/Saved/Config/WindowsNoEditor":
+      tags:
+        - config
+      when:
+        - os: windows
+  installDir:
+    AlphaResponse: {}
+  launch:
+    "<base>/KillOption.exe":
+      - when:
+          - bit: 64
+            os: windows
+            store: steam
+  steam:
+    id: 2089250
 Alpha Runner:
   installDir:
     Alpha Runner: {}
@@ -39780,7 +39797,12 @@ Another Brick in the Mall:
   cloud:
     steam: true
   files:
-    "<home>/AppData/LocalLow/Aggro Crab/AnotherCrabsTreasure/**/*.CRAB":
+    "<home>/AppData/LocalLow/Aggro Crab/*.userSettings":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<home>/AppData/LocalLow/Aggro Crab/AnotherCrabsTreasure/*/*.CRAB":
       tags:
         - save
       when:
@@ -39801,6 +39823,10 @@ Another Brick in the Mall:
       - when:
           - os: windows
             store: steam
+  registry:
+    HKEY_CURRENT_USER/Software/Aggro Crab:
+      tags:
+        - config
   steam:
     id: 1887840
 Another Dawn:
@@ -55737,6 +55763,8 @@ Automobilista:
   steam:
     id: 431600
 Automobilista 2:
+  cloud:
+    steam: true
   installDir:
     Automobilista 2: {}
   launch:
@@ -63782,8 +63810,6 @@ Bandits:
             store: steam
   steam:
     id: 1029560
-Bandits Phoenix Rising:
-  alias: "Bandits: Phoenix Rising"
 "Bandle Tale: A League of Legends Story":
   cloud:
     steam: true
@@ -90841,8 +90867,6 @@ Bonfire Peaks:
   steam:
     id: 1147890
 Bongo Cat:
-  cloud:
-    steam: true
   files:
     "<home>/AppData/LocalLow/Irox Games/BongoCat":
       tags:
@@ -107055,6 +107079,32 @@ Call of Duty Black Ops Cold War:
 "Call of Duty: Modern Warfare 3":
   cloud:
     steam: true
+  files:
+    "<base>/players2/config.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<base>/players2/config_mp.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<base>/players2/save":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<base>/players2/settings_c.zip.iw5":
+      tags:
+        - save
+      when:
+        - os: windows
+    "<base>/players2/settings_s.zip.iw5":
+      tags:
+        - save
+      when:
+        - os: windows
   id:
     lutris: call-of-duty-modern-warfare-3
     steamExtra:
@@ -110349,7 +110399,7 @@ CarX Street:
       - when:
           - os: linux
             store: steam
-    "<base>/eac_launcher.app/Contents/MacOS/start_protected_game":
+    "<base>/eac_launcher.app":
       - when:
           - os: mac
             store: steam
@@ -116356,17 +116406,17 @@ Cavern of Dreams:
     gog: true
     steam: true
   files:
-    "<winAppData>/LocalLow/Bynine Studio/Cavern of Dreams/save1.json":
+    "<home>/AppData/LocalLow/Bynine Studio/Cavern of Dreams/save1.json":
       tags:
         - save
       when:
         - os: windows
-    "<winAppData>/LocalLow/Bynine Studio/Cavern of Dreams/save2.json":
+    "<home>/AppData/LocalLow/Bynine Studio/Cavern of Dreams/save2.json":
       tags:
         - save
       when:
         - os: windows
-    "<winAppData>/LocalLow/Bynine Studio/Cavern of Dreams/save3.json":
+    "<home>/AppData/LocalLow/Bynine Studio/Cavern of Dreams/save3.json":
       tags:
         - save
       when:
@@ -118140,6 +118190,8 @@ Chambered:
   steam:
     id: 658230
 Chambers:
+  cloud:
+    steam: true
   files:
     "<winAppData>/Godot/app_userdata/Chambers/configs/*.tres":
       when:
@@ -128747,8 +128799,6 @@ Clans to Kingdoms:
             store: steam
   steam:
     id: 1120580
-Clap Hanz Golf:
-  alias: Easy Come Easy Golf
 Clash:
   cloud:
     gog: true
@@ -139450,6 +139500,20 @@ Concrete and Steel:
             store: steam
   steam:
     id: 444830
+Concubine:
+  files:
+    "<winLocalAppData>/Concubine/Saved/Config/Windows":
+      tags:
+        - config
+      when:
+        - os: windows
+    "<winLocalAppData>/Concubine/Saved/SaveGames":
+      tags:
+        - save
+      when:
+        - os: windows
+  steam:
+    id: 2426120
 Concurrency:
   installDir:
     Concurrency: {}
@@ -144976,8 +145040,6 @@ Counter-Strike 2:
             store: steam
   steam:
     id: 730
-Counter-Strike NEO -White Memories-:
-  alias: "Counter-Strike Neo: White Memories"
 "Counter-Strike Nexon: Studio":
   installDir:
     CSNZ: {}
@@ -158403,6 +158465,16 @@ Cyberpunk 2077:
     gog: true
     steam: true
   files:
+    "<home>/Library/Application Support/CD Projekt Red/Cyberpunk 2077":
+      tags:
+        - config
+      when:
+        - os: mac
+    "<home>/Library/Application Support/CD Projekt Red/Cyberpunk 2077/saves":
+      tags:
+        - save
+      when:
+        - os: mac
     "<home>/Saved Games/CD Projekt Red/Cyberpunk 2077":
       tags:
         - save
@@ -164736,7 +164808,7 @@ Dark Souls Remastered:
         - save
       when:
         - os: windows
-    "<winLocalAppData>/NBGI/DarkSouls":
+    "<winLocalAppData>/NBGI/DarkSouls/DarkSouls.ini":
       tags:
         - config
       when:
@@ -189672,8 +189744,6 @@ Disney Speedstorm:
             store: steam
   steam:
     id: 1537830
-Disney The Little Mermaid Undersea Treasures:
-  alias: "The Little Mermaid: Undersea Treasures"
 Disney Universe:
   cloud:
     steam: true
@@ -189783,8 +189853,6 @@ Disney Universe:
         - save
   steam:
     id: 987400
-"Disney's Tarzan Activity Center":
-  alias: Tarzan Activity Center
 Disneyland Adventures:
   cloud:
     steam: true
@@ -209433,6 +209501,7 @@ Dungeons & Dragons Online:
 "Dungeons & Dragons: Dragonshard":
   cloud:
     gog: true
+    steam: true
   files:
     "<winDocuments>/My Games/Dragonshard":
       tags:
@@ -209444,6 +209513,13 @@ Dungeons & Dragons Online:
     id: 1207658928
   id:
     lutris: dungeons-dragons-dragonshard
+  installDir:
+    Dungeons & Dragons Dragonshard: {}
+  launch:
+    "<base>/Dragonshard.exe":
+      - when:
+          - os: windows
+            store: steam
   steam:
     id: 3843540
 Dungeons & Geese:
@@ -210938,13 +211014,6 @@ Dwarf Fortress:
         - os: windows
         - os: mac
         - os: linux
-    "<base>/data/save":
-      tags:
-        - save
-      when:
-        - os: windows
-        - os: mac
-        - os: linux
     "<base>/prefs":
       tags:
         - config
@@ -210954,9 +211023,13 @@ Dwarf Fortress:
       tags:
         - save
       when:
-        - os: windows
         - os: mac
         - os: linux
+    "<winAppData>/Bay 12 Games/Dwarf Fortress/save":
+      tags:
+        - save
+      when:
+        - os: windows
   id:
     lutris: dwarf-fortress
   installDir:
@@ -216438,6 +216511,19 @@ Echoes of Aetheria:
   steam:
     id: 2776940
 Echoes of the End:
+  cloud:
+    steam: true
+  files:
+    "<base>/TheDarken/Saved/SaveGames/*.sav":
+      when:
+        - store: steam
+  installDir:
+    Echoes_of_the_End: {}
+  launch:
+    "<base>/TheDarken.exe":
+      - when:
+          - os: windows
+            store: steam
   steam:
     id: 2821610
 "Echoes of the Fey Episode 0: The Immolation":
@@ -229760,8 +229846,6 @@ Eslander:
     Eslander: {}
   steam:
     id: 1069250
-Espana 1936:
-  alias: España 1936
 Esper - Make You Live Again:
   cloud:
     steam: true
@@ -241737,6 +241821,21 @@ Fallen Bird:
             store: steam
   steam:
     id: 857710
+Fallen City Brawl:
+  gog:
+    id: 1359270943
+  id:
+    steamExtra:
+      - 1733780
+  installDir:
+    Fallen City Brawl: {}
+  launch:
+    "<base>/Fallen_City_Brawl_v1_August_2025.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 1717190
 Fallen Cube:
   cloud:
     steam: true
@@ -263668,8 +263767,6 @@ FortressCraft Evolved:
             store: steam
   steam:
     id: 254200
-Fortressone (2018):
-  alias: FortressOne
 Forts:
   cloud:
     steam: true
@@ -291839,8 +291936,6 @@ Grand Kokoro - Episode 1:
             store: steam
   steam:
     id: 449530
-Grand Prix 3 Season 2000:
-  alias: Grand Prix 3
 Grand Pskov Story:
   steam:
     id: 735590
@@ -310481,9 +310576,11 @@ Heartworm:
   cloud:
     steam: true
   files:
-    "<home>/AppData/LocalLow/Heartworm LLC/Heartworm/saves/**/*.bin":
+    "<home>/AppData/LocalLow/Heartworm LLC/Heartworm/saves":
+      tags:
+        - save
       when:
-        - store: steam
+        - os: windows
   installDir:
     Heartworm: {}
   launch:
@@ -353661,6 +353758,13 @@ Jack Spriggan:
             store: steam
   steam:
     id: 841010
+Jack in the Dark:
+  cloud:
+    gog: true
+  gog:
+    id: 1207658923
+  steam:
+    id: 548090
 Jack the Barbarian:
   installDir:
     Jack the Barbarian: {}
@@ -360761,8 +360865,6 @@ Justice Legion:
           - store: steam
   steam:
     id: 819270
-Justice Online:
-  alias: Sword of Justice
 Justice Strikes:
   steam:
     id: 1206020
@@ -361743,6 +361845,32 @@ Kaisuo:
     Kaisuo: {}
   steam:
     id: 1045590
+"Kaizen: A Factory Story":
+  cloud:
+    steam: true
+  files:
+    "<winDocuments>/My Games/Kaizen - A Factory Story":
+      tags:
+        - save
+      when:
+        - os: windows
+  installDir:
+    Kaizen - A Factory Story: {}
+  launch:
+    "<base>/Kaizen":
+      - when:
+          - os: linux
+            store: steam
+    "<base>/Kaizen.app/Contents/MacOS/Kaizen":
+      - when:
+          - os: mac
+            store: steam
+    "<base>/Kaizen.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2275490
 Kajko i Kokosz:
   cloud:
     gog: true
@@ -409550,8 +409678,6 @@ Mahou Mating:
     steam: true
   steam:
     id: 1126240
-Mahoutsukai no Yoru:
-  alias: Witch on the Holy Night (2012)
 Mahsung Deluxe:
   installDir:
     Mahsung Deluxe: {}
@@ -412260,8 +412386,6 @@ Marauder:
             store: steam
   steam:
     id: 289600
-Marauders:
-  alias: Destroyer Command
 Marble Age:
   files:
     "<home>/Library/Application Support/PreCivSteam/Local Store/**/*.sol":
@@ -420324,8 +420448,6 @@ Mega Veg Man:
             store: steam
   steam:
     id: 1426330
-Mega-Lo-Mania:
-  alias: Mega lo Mania
 MegaGlest:
   installDir:
     MegaGlest: {}
@@ -424096,8 +424218,6 @@ Metal Heads:
             store: steam
   steam:
     id: 1132670
-"Metal Knight: Mission: Terminate Resistance":
-  alias: "Metal Knight: Mission - Terminate Resistance"
 Metal Max Xeno Reborn:
   cloud:
     steam: true
@@ -459292,8 +459412,6 @@ NetHack:
             store: steam
   steam:
     id: 837200
-NetKar-pro:
-  alias: NetKar Pro
 NetStars - VR Goalie Trainer:
   installDir:
     NetStars - VR Goalie Trainer: {}
@@ -462566,8 +462684,6 @@ Night Slashers:
             store: steam
   steam:
     id: 1627220
-Night Slashers WideScreen:
-  alias: Night Slashers X WideScreen
 Night Trap - 25th Anniversary Edition:
   files:
     "<home>/AppData/LocalLow/Screaming Villains/Night Trap - 25th Anniversary Edition/PlayerPrefs.txt":
@@ -464520,7 +464636,6 @@ Ninja Gaiden Σ2:
     id: 1580790
 "Ninja Gaiden: Ragebound":
   cloud:
-    gog: true
     steam: true
   files:
     "<home>/AppData/LocalLow/The Game Kitchen/NINJA GAIDEN Ragebound/SteamUser_<storeUserId>":
@@ -467354,7 +467469,7 @@ Nodiatis:
             store: steam
   steam:
     id: 541190
-Noel The Mortal Fate S1-7:
+Noel The Mortal Fate:
   cloud:
     steam: true
   files:
@@ -467387,6 +467502,8 @@ Noel The Mortal Fate S1-7:
             store: steam
   steam:
     id: 850000
+Noel The Mortal Fate S1-7:
+  alias: Noel The Mortal Fate
 "Noel's Hope":
   installDir:
     Noels_Hope: {}
@@ -540349,8 +540466,6 @@ Reader Rabbit Thinking Adventures Ages 4-6:
         - config
       when:
         - os: windows
-"Reader Rabbit's Learn to Read with Phonics: Preschool & Kindergarten":
-  alias: "Reader Rabbit's Learn to Read"
 "Reader Rabbit's Math 1":
   files:
     "<base>/Rrm1.ini":
@@ -558431,8 +558546,6 @@ RoboCop (2003):
         - save
       when:
         - os: windows
-RoboCop 3D:
-  alias: RoboCop 3
 "RoboCop: Rogue City":
   cloud:
     epic: true
@@ -559682,8 +559795,6 @@ Rock of Ages:
             store: steam
   steam:
     id: 434460
-"Rock'n'Shaolin: Legend of the Seven Paladins 3D":
-  alias: "Rock'n Shaolin: Legend of the Seven Paladins 3D"
 "Rock, Ken, Bo":
   cloud:
     steam: true
@@ -560995,13 +561106,11 @@ Rogue Hero:
     id: 787810
 Rogue Invader:
   files:
-    "<home>/AppData/LocalLow/Squishy Games/Rogue Invader/SaveData":
+    "<home>/AppData/LocalLow/Squishy Games":
+      tags:
+        - save
       when:
-        - store: steam
-    "<home>/Library/Application Support/Squishy Games/Rogue Invader/SaveData":
-      when:
-        - os: mac
-          store: steam
+        - os: windows
   id:
     steamExtra:
       - 385050
@@ -572666,8 +572775,6 @@ Sailaway - The Sailing Simulator:
 Sailor Jump:
   steam:
     id: 1105390
-Sailor Moon Dating Sim:
-  alias: "Sailor Moon Dating Simulator: Moon Maid"
 Sailwind:
   files:
     "<home>/AppData/LocalLow/Raw Lion Workshop/Sailwind":
@@ -579155,8 +579262,6 @@ School Grounds:
             store: steam
   steam:
     id: 984240
-"School House Rock: Exploration Station":
-  alias: "Schoolhouse Rock!: Exploration Station"
 School Idol:
   installDir:
     SchoolIdol: {}
@@ -617028,6 +617133,32 @@ Soulash:
             store: steam
   steam:
     id: 1623210
+Soulash 2:
+  files:
+    "<winAppData>/WizardsOfTheCode/Soulash2/data":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: steam
+    "<winAppData>/WizardsOfTheCode/Soulash2/saves":
+      tags:
+        - config
+      when:
+        - os: windows
+          store: steam
+  id:
+    steamExtra:
+      - 2717230
+  installDir:
+    Soulash 2: {}
+  launch:
+    "<base>/Soulash 2.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2399160
 Soulblight:
   files:
     "<winLocalAppData>/Soulblight_Saves":
@@ -642999,6 +643130,11 @@ Story About Times:
             store: steam
   steam:
     id: 989430
+"Story Of Seasons: Grand Bazaar":
+  cloud:
+    steam: true
+  steam:
+    id: 2508780
 Story Teller:
   steam:
     id: 1092900
@@ -660131,10 +660267,6 @@ Sven Co-op:
             store: steam
   steam:
     id: 225840
-"Sven-Goran Eriksson's World Challenge":
-  alias: "Sven-Göran Eriksson's World Challenge"
-"Sven-Goran Eriksson's World Manager":
-  alias: "Sven-Göran Eriksson's World Manager"
 Svoboda:
   steam:
     id: 848640
@@ -662629,6 +662761,13 @@ Syder Arcade:
             store: steam
   steam:
     id: 252310
+Sydney 2000:
+  files:
+    "<base>/OLY2000.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
 Sydney Hunter and the Curse of the Mayan:
   installDir:
     Sydney Hunter COTM: {}
@@ -730824,8 +730963,6 @@ To End All Wars:
           - store: steam
   steam:
     id: 312360
-To Heart:
-  alias: ToHeart
 To Heart (Remake):
   alias: ToHeart (Remake)
 To Hell With Dave:
@@ -731855,6 +731992,9 @@ Toki Tori 2+:
         - save
       when:
         - os: windows
+"Tokimeki Memorial: Taisen Puzzle-Dama":
+  id:
+    lutris: tokimeki-memorial-taisen-puzzle-dama
 Tokyo 42:
   cloud:
     gog: true
@@ -734314,8 +734454,6 @@ Toon Quad:
         - save
       when:
         - os: windows
-Toon Twister 3-D:
-  alias: Nickelodeon Toon Twister 3-D
 Toon War:
   cloud:
     steam: true
@@ -734516,8 +734654,6 @@ Top Down Survivor:
             store: steam
   steam:
     id: 876260
-Top Eleven 2022:
-  alias: Top Eleven
 Top Gun (2010):
   cloud:
     steam: true
@@ -740414,6 +740550,9 @@ Trailmakers:
           - store: steam
   steam:
     id: 585420
+Trails in the Sky 1st Chapter:
+  steam:
+    id: 3375780
 Trails of the Black Sun:
   installDir:
     Trails of the Black Sun: {}
@@ -755379,6 +755518,23 @@ Uma Musume Pretty Derby:
         - store: steam
   steam:
     id: 3224770
+"Umamusume: Pretty Derby - Party Dash":
+  cloud:
+    steam: true
+  files:
+    "<winAppData>/Uma Party Dash/Save/**/*.dat":
+      when:
+        - os: windows
+          store: steam
+  installDir:
+    Uma Party Dash: {}
+  launch:
+    "<base>/Uma Party Dash.exe":
+      - when:
+          - os: windows
+            store: steam
+  steam:
+    id: 2313020
 "Umbra: Shadow of Death":
   cloud:
     steam: true
@@ -758680,11 +758836,14 @@ Unheard:
   steam:
     id: 365080
 Unholy:
+  cloud:
+    steam: true
   files:
-    "<winLocalAppData>/UnholyGame/Saved/SaveGames/**/*.sav":
+    "<winLocalAppData>/UnholyGame/Saved/SaveGames":
+      tags:
+        - save
       when:
         - os: windows
-          store: steam
   gog:
     id: 1218062461
   installDir:
@@ -759289,8 +759448,6 @@ Unknown:
             store: steam
   steam:
     id: 996730
-Unknown 9:
-  alias: "Unknown9: Awakening"
 "Unknown 9: Awakening":
   cloud:
     steam: true
@@ -792413,8 +792570,6 @@ Windowkill:
             store: steam
   steam:
     id: 2726450
-Windows Subsystem for Android™:
-  alias: Windows Subsystem for Android
 Winds of Change:
   cloud:
     steam: true
@@ -797327,6 +797482,13 @@ Woody Blox:
     id: 49320
 Woody Woodpecker Escape From Buzz Buzzard Park:
   alias: "Woody Woodpecker: Escape from Buzz Buzzard Park"
+"Woody Woodpecker: Escape from Buzz Buzzard Park":
+  files:
+    "<base>/Woody.cfg":
+      tags:
+        - config
+      when:
+        - os: windows
 Woof Blaster:
   installDir:
     WoofBlaster: {}
@@ -815857,8 +816019,6 @@ Zzzzz:
     id: 847100
 Тёмное отражение (Dark Reflection):
   alias: Dark Reflection
-Хранители. Ключ жизни:
-  alias: "Keepers: The Key of Life"
 ШП:
   installDir:
     ShP: {}

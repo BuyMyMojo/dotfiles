@@ -1,0 +1,22 @@
+{
+    "from": "User",
+    "inherits": "Elegoo Neptune 4 Pro (0.4 nozzle)",
+    "is_custom_defined": "0",
+    "max_layer_height": [
+        "0.24"
+    ],
+    "name": "Elegoo Neptune 4 Pro (0.4 nozzle) - retraction-tune + adaptive layers",
+    "print_host": "10.42.0.82",
+    "printer_settings_id": "Elegoo Neptune 4 Pro (0.4 nozzle) - retraction-tune + adaptive layers",
+    "retraction_length": [
+        "0.5"
+    ],
+    "retraction_speed": [
+        "20"
+    ],
+    "thumbnails": "600x600/PNG",
+    "version": "2.2.0.4",
+    "z_hop": [
+        "0.5"
+    ]
+}

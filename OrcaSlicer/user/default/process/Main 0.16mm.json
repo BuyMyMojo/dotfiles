@@ -1,14 +1,21 @@
 {
+    "brim_object_gap": "0.04",
+    "brim_width": "8",
     "from": "User",
     "inherits": "0.16mm Optimal @Elegoo Neptune4Pro (0.4 nozzle)",
     "is_custom_defined": "0",
     "name": "Main 0.16mm",
     "post_process": [
-        "ElegooNeptuneThumbnails-Prusa.exe --printer=NEPTUNE4PRO --currency=$"
+        "ElegooNeptuneThumbnails-Prusa --printer=NEPTUNE4PRO --currency=\\$"
     ],
+    "precise_outer_wall": "0",
     "print_settings_id": "Main 0.16mm",
     "seam_slope_type": "external",
+    "skirt_loops": "3",
     "small_area_infill_flow_compensation": "1",
+    "sparse_infill_density": "10%",
+    "sparse_infill_pattern": "tpmsfk",
     "version": "2.1.0.0",
+    "wall_loops": "2",
     "wall_sequence": "inner-outer-inner wall"
 }

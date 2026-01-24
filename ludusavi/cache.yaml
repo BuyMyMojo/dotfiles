@@ -4,7 +4,7 @@ version:
   - 29
   - 1
 release:
-  checked: "2025-08-10T01:28:51.040229559Z"
+  checked: "2025-08-13T21:00:48.055010667Z"
   latest: 0.29.1
 migrations:
   adopted_cache: true
@@ -12,9 +12,9 @@ migrations:
   set_default_manifest_url_to_null: true
 manifests:
   "https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml":
-    etag: "W/\"2a72e6cc6e09bf35e01d5d8a2c6a0aa7282483bd6837b42476fd9ce659992b57\""
-    checked: "2025-08-10T01:28:52.779587273Z"
-    updated: "2025-08-10T01:28:52.779587273Z"
+    etag: "W/\"7b37096aadc25ee70a17511033593017ef984fab1ac609164a2715e4961f7dc0\""
+    checked: "2025-08-13T21:00:48.275760569Z"
+    updated: "2025-08-13T21:00:48.275760569Z"
 roots:
   - store: heroic
     path: /home/buymymojo/.config/heroic

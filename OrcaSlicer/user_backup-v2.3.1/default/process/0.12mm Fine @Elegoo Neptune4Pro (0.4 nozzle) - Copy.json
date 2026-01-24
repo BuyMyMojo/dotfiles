@@ -1,0 +1,16 @@
+{
+    "from": "User",
+    "inherits": "0.12mm Fine @Elegoo Neptune4Pro (0.4 nozzle)",
+    "inner_wall_speed": "215",
+    "internal_solid_infill_speed": "225",
+    "is_custom_defined": "0",
+    "name": "0.12mm Fine @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "print_settings_id": "0.12mm Fine @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "skirt_height": "1",
+    "skirt_loops": "2",
+    "sparse_infill_density": "20%",
+    "sparse_infill_pattern": "3dhoneycomb",
+    "sparse_infill_speed": "250",
+    "version": "1.9.0.2",
+    "wall_loops": "2"
+}

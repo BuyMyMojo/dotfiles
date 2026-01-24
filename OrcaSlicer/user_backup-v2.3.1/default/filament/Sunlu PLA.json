@@ -1,0 +1,43 @@
+{
+    "filament_cost": [
+        "30.58"
+    ],
+    "filament_density": [
+        "1.23"
+    ],
+    "filament_notes": [
+        "https://amzn.asia/d/0GKr8R7"
+    ],
+    "filament_settings_id": [
+        "Sunlu PLA"
+    ],
+    "filament_vendor": [
+        "Sunlu"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "65"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "65"
+    ],
+    "inherits": "Elegoo Generic PLA",
+    "is_custom_defined": "0",
+    "name": "Sunlu PLA",
+    "nozzle_temperature": [
+        "215"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "nozzle_temperature_range_high": [
+        "225"
+    ],
+    "nozzle_temperature_range_low": [
+        "200"
+    ],
+    "temperature_vitrification": [
+        "54"
+    ],
+    "version": "2.1.0.0"
+}

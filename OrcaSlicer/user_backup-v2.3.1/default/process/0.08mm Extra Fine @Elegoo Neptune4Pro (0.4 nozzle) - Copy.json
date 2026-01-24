@@ -1,0 +1,15 @@
+{
+    "from": "User",
+    "inherits": "0.08mm Extra Fine @Elegoo Neptune4Pro (0.4 nozzle)",
+    "inner_wall_speed": "225",
+    "is_custom_defined": "0",
+    "name": "0.08mm Extra Fine @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "precise_z_height": "1",
+    "print_settings_id": "0.08mm Extra Fine @Elegoo Neptune4Pro (0.4 nozzle) - Copy",
+    "seam_slope_conditional": "1",
+    "skirt_loops": "3",
+    "sparse_infill_density": "25%",
+    "sparse_infill_speed": "250",
+    "version": "2.1.0.0",
+    "wall_sequence": "inner-outer-inner wall"
+}

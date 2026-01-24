@@ -1,0 +1,22 @@
+{
+    "filament_settings_id": [
+        "Flashforge PLA - Copy"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "55"
+    ],
+    "inherits": "Flashforge PLA",
+    "is_custom_defined": "0",
+    "name": "Flashforge PLA - Copy",
+    "nozzle_temperature": [
+        "220"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220"
+    ],
+    "version": "2.3.1.10"
+}
